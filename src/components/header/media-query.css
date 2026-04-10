@@ -1,40 +1,13 @@
+/*Pequenas telas: até 600px;
+Celular: de 600px até 768px;
+Tablet: 768px até 992px;
+Desktop: 992px até 1200px;
+Grandes telas: acima de 1200px.
+*/
 
 
-/* header {
-    border-bottom: 1px solid var(--CorDestaque);
-    padding: 15px 25px;
-    font-family: var(--fonte0);
-    background-color: var(--CorFundo);
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-header > h1 {
-    text-align: left;
-    font-size: 1.3em;
-    text-shadow: 2px 2px 0px #3e4a46;
-    flex: 0px 0px 150px;
-}
-nav {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-    gap: 20px;
-}
-nav > a {
-    text-decoration: none;
-    font-size: 1.1em;
-    border-radius: 15px;
-    padding: 5px;
-}
-nav > a:hover {
-    background-color: #D7E4F6;
-    color: #0F172A;
-    transition: background-color 0.5s, color 0.5s;
-} */
-/*pc version acima*/
-/*mobile first abaixo*/
+@media screen and (min-width: 500px) {
+
 header {
     border-bottom: 1px solid var(--CorDestaque);
     padding: 15px 25px;
@@ -48,14 +21,31 @@ header {
 header > h1 {
     text-align: left;
     font-size: 1.3em;
+    /* padding-left: 15px; */
     text-shadow: 2px 2px 0px #3e4a46;
     flex: 0px 0px 150px;
 }
-nav > a {
+#botao-menu {
     display: none;
 }
-#botao-menu {
-    background-color: blue;
+nav {
+    display: block;
     display: flex;
-    flex-flow: row-reverse nowrap;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    gap: 20px;
+    /* padding-right: 15px; */
+}
+nav > a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 15px;
+    padding: 5px;
+}
+nav > a:hover {
+    background-color: #D7E4F6;
+    color: #0F172A;
+    transition: background-color 0.5s, color 0.5s;
+}
 }
