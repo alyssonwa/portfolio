@@ -37,25 +37,55 @@ nav > a:hover {
 /*mobile first abaixo*/
 header {
     border-bottom: 1px solid var(--CorDestaque);
-    padding: 15px 25px;
+    padding: 10px 5px;
     font-family: var(--fonte0);
     background-color: var(--CorFundo);
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-flow: row-reverse wrap;
+    justify-content: flex-end;
     align-items: center;
+    gap: 10px;
 }
 header > h1 {
     text-align: left;
     font-size: 1.3em;
     text-shadow: 2px 2px 0px #3e4a46;
     flex: 0px 0px 150px;
+    display:flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-menu {
+    display: none;
+    flex-direction: column;
+}
+.nav-menu.ativo {
+    display: flex;
 }
 nav > a {
     display: none;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 15px;
+    padding: 5px;
 }
-#botao-menu {
-    background-color: blue;
-    display: flex;
-    flex-flow: row-reverse nowrap;
+nav > a:hover {
+    background-color: #D7E4F6;
+    color: #0F172A;
+    transition: background-color 0.5s, color 0.5s;
+}
+.botao-menu {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex; /* Alinha o ícone no centro */
+  flex-flow: row nowrap;
+  background-color: green;
+}
+.logo {
+    fill: var(--CorLetra);
+    width: 20px;
+   
 }
