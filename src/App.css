@@ -10,6 +10,7 @@ Grandes telas: acima de 1200px.
 
 :root {
   --CorFundo: #0F172A;
+  --CorFundo2: #D7E4F6;
   --CorDestaque: #16F2D4;
   --CorLetra: #F2F5FC;
   --fonte0: 'Khula',Arial, Helvetica, sans-serif;
@@ -20,9 +21,12 @@ Grandes telas: acima de 1200px.
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: var(--CorLetra);
 }
 
 body {
   background-color: var(--CorFundo);
+  color: var(--CorLetra);
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
 }
