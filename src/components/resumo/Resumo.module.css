@@ -1,0 +1,45 @@
+@charset "UTF-8";
+.resumoContainer {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--CorFundo);
+}
+
+.conteudo {
+    text-align: center;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    color: var(--CorLetra);
+    margin-bottom: 20px;
+    padding-top: 10px; 
+
+     text-align: center;
+    font-family: var(--Fonte1);
+    font-size: 3em;
+    padding-top: 40px;
+}
+
+.listaRedes {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 0;
+}
+
+.linkRede {
+    text-decoration: none;
+    color: var(--CorDestaque);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.linkRede:hover {
+    color: var(--CorLetra);
+}
+
+

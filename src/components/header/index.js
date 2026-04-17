@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import './index.css';
-import './media-query.css';
+import styles from './Header.module.css';
+import LogoEstrela from '../logo';
+// import './media-query.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
-import LogoEstrela from '../logo';
 
 const Header = () => {
   const [menuAberto, setMenuAberto] = useState(false);
@@ -22,27 +22,27 @@ const Header = () => {
 
   return (
     <>
-      <header>
-        <h1
-          onClick={irParaHome}
-          className="logo-clicavel"
-          role="button"
-          tabIndex="0"
-        >
-          <LogoEstrela />
-          Alysson Alves
-        </h1>
+      <header className={styles.header}>
         <button
-          className="botao-menu"
+          className={styles.botaoMenu}
           onClick={alternarMenu}
           aria-label="Abrir menu"
         >
           <MenuIcon />
         </button>
+        <h1
+          onClick={irParaHome}
+          className={styles.logoClicavel}
+          role="button"
+          tabIndex="0"
+        >
+          <LogoEstrela className={styles.estrelaSvg} />
+          Alysson Alves
+        </h1>
         {/* Se menuAberto for true, adiciona a classe 'aberto' */}
-        <nav className={`nav-menu ${menuAberto ? 'aberto' : ''}`}>
+        <nav className={`${styles.navMenu} ${menuAberto ? styles.aberto : ''}`}>
           <button
-            className="fechar-botao"
+            className={styles.fecharBotao}
             onClick={alternarMenu}
             aria-label="Fechar menu"
           >
@@ -64,13 +64,18 @@ const Header = () => {
             <li>
               <a href="#">
                 Currículo
-                <ArrowOutwardIcon fontSize="small" className="seta-arquivo" />
+                <ArrowOutwardIcon
+                  fontSize="small"
+                  className={styles.setaArquivo}
+                />
               </a>
             </li>
           </ul>
         </nav>
         {/* Overlay: Fundo escurecido que aparece atrás do menu */}
-        {menuAberto && <div className="overlay" onClick={alternarMenu}></div>}
+        {menuAberto && (
+          <div className={styles.overlay} onClick={alternarMenu}></div>
+        )}
       </header>
     </>
   );
