@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Header.module.css';
-import LogoEstrela from '../logo';
+import LogoEstrela from '../icons/logo';
 // import './media-query.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';

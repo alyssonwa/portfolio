@@ -2,44 +2,76 @@
 .resumoContainer {
     padding: 60px 20px;
     display: flex;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     background-color: var(--CorFundo);
 }
 
-.conteudo {
-    text-align: center;
-}
+ .conteudo {
+    /* text-align: center; */
+} 
 
-.titulo {
-    font-size: 2.5rem;
+.conteudo h1 {
+    /* font-size: clamp(2.25rem,4vw,7.75rem); */
+    font-family: var(--fonte1);
     color: var(--CorLetra);
-    margin-bottom: 20px;
-    padding-top: 10px; 
+    padding-bottom: 30px;
+    word-break: keep-all;
+    text-align: justify;
+   
+    font-size: 2.5em;
+    padding-top: 20px;
+    padding-left: 10px;
 
-     text-align: center;
-    font-family: var(--Fonte1);
-    font-size: 3em;
-    padding-top: 40px;
+    flex: 0 1 50px;
 }
 
-.listaRedes {
+.conteudo article {
+    margin-top: 20px;
+    border: none;
+}
+.conteudo > article > p {
+    font-family: var(--fonte0);
+    font-size: 1em;
+    text-align: start;
+    word-break: break-word;
+    line-height: 1.4em;
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content: flex-start; */
+    padding-top: 30px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.conteudo ul {
     list-style: none;
     display: flex;
     gap: 20px;
-    justify-content: center;
-    padding: 0;
+    justify-content: flex-start;
+    padding-left: 15px;
 }
 
-.linkRede {
+.conteudo a {
     text-decoration: none;
     color: var(--CorDestaque);
     font-weight: bold;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: #16f2d530;
     transition: color 0.3s ease;
 }
 
-.linkRede:hover {
-    color: var(--CorLetra);
+/*Desktop*/
+@media screen and (min-width: 570px){
+    
+    .conteudo a {
+        background-color: initial;
+    }
+    .conteudo a:hover {
+        background-color: var(--CorDestaqueTransparencia);
+    }
 }
 
 

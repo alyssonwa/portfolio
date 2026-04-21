@@ -1,29 +1,42 @@
 import React from 'react';
 import styles from './Resumo.module.css';
+import LogoReact from '../icons/react';
+import LogoNext from '../icons/next';
+import LogoFigma from '../icons/figma';
 
 const Resumo = () => {
   return (
     <section className={styles.resumoContainer}>
       <div className={styles.conteudo}>
-        <h1 className={styles.titulo}>Desenvolvedor Front-end</h1>
-        <ul className={styles.listaRedes}>
-          <li className={styles.itemRede}>
-            <a href="#" className={styles.linkRede}>
-              {/* Seus ícones ou textos de redes sociais aqui */}
-              LinkedIn
-            </a>
+        <h1>Desenvolvedor Front-end</h1>
+        <ul>
+          <li>
+            <a href="#">LinkedIn</a>
           </li>
-          <li className={styles.itemRede}>
-            <a href="#" className={styles.linkRede}>
-              GitHub
-            </a>
+          <li>
+            <a href="#">GitHub</a>
           </li>
-          <li className={styles.itemRede}>
-            <a href="#" className={styles.linkRede}>
-              Instagram
-            </a>
+          <li>
+            <a href="#">Currículo</a>
           </li>
         </ul>
+        <article>
+          <p>
+            Desenvolvo páginas para a web de forma responsiva e acessível,
+            utilizando tecnologias como:{' '}
+          </p>
+          <ul>
+            <li>
+              React <LogoReact />
+            </li>
+            <li>
+              Next.js <LogoNext />
+            </li>
+            <li>
+              Figma <LogoFigma />
+            </li>
+          </ul>
+        </article>
       </div>
     </section>
   );
