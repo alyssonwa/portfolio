@@ -26,7 +26,7 @@ Grandes telas: acima de 1200px.
 }
 
 /*Desktop*/
-@media screen and (min-width: 570px) {
+@media screen and (min-width: 768px) {
   .spotlight {
     top: 0;
     left: 0;

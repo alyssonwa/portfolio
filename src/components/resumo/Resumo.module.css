@@ -34,15 +34,16 @@
 .conteudo > article > p {
     font-family: var(--fonte0);
     font-size: 1em;
-    text-align: start;
+    line-height: 5px;
+    text-align: justify;
     word-break: break-word;
-    line-height: 1.4em;
+    line-height: 1.6em;
     display: flex;
     flex-flow: row wrap;
     /* justify-content: flex-start; */
-    padding-top: 30px;
+    /* padding-top: 30px; */
     padding-left: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .conteudo ul {
@@ -51,9 +52,10 @@
     gap: 20px;
     justify-content: flex-start;
     padding-left: 15px;
+    margin-bottom: 40px;
 }
 
-.conteudo a {
+.conteudo li a {
     text-decoration: none;
     color: var(--CorDestaque);
     font-weight: bold;
@@ -63,13 +65,36 @@
     transition: color 0.3s ease;
 }
 
+ .linkProjetos {
+    text-decoration: none;
+    display: flex;
+    align-items: center;   /* Centraliza verticalmente ícone e texto */
+    justify-content: center;
+    /* justify-content: center;
+    align-items: center; */
+    color: var(--CorDestaque);
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 5px;
+    margin-top: 50px;
+    /* padding-top: 30px; */
+    background-color: var(--CorDestaqueTransparencia);
+    transition: color 0.3s ease;
+}
+.setaBaixo{
+    display: inline-flex;
+    vertical-align: bottom;
+    /* font-size: 2rem !important; */
+   
+}
+
 /*Desktop*/
-@media screen and (min-width: 570px){
+@media screen and (min-width: 768px){
     
-    .conteudo a {
+    .conteudo li a {
         background-color: initial;
     }
-    .conteudo a:hover {
+    .conteudo li a:hover {
         background-color: var(--CorDestaqueTransparencia);
     }
 }
