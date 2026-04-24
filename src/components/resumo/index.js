@@ -11,7 +11,7 @@ const Resumo = () => {
     <section className={styles.resumoContainer}>
       <div className={styles.conteudo}>
         <h1>Desenvolvedor Front-end</h1>
-        <ul>
+        <ul className={styles.linksSociais}>
           <li>
             <a href="#">LinkedIn</a>
           </li>
