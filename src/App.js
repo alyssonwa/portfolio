@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './App.module.css';
 import Header from './components/header';
 import Resumo from './components/resumo';
+import Projetos from './components/projetos';
 
 function App() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -24,6 +25,7 @@ function App() {
 
       <Header />
       <Resumo />
+      <Projetos />
     </div>
   );
 }

@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.projetosContainer {
+    border: 1px solid lightcoral;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.projetosContainer section {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+}
+.projetoImagem {
+    border: 1px solid white;
+    background-color: #D7E4F6;
+    width: 50vw;
+    height: 500px;
+    /* padding-left: 30px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.projetoDescricao {
+    border: 1px solid lightblue;
+    width: 51vw;
+    background-color: #8291A5;
+    color: var(--CorFundo);
+}
