@@ -10,22 +10,94 @@
 }
 .projetosContainer section {
     display: flex;
+    width: 100%;
+    min-height: 400px;
     flex-flow: row nowrap;
-    gap: 10px;
+    gap: 0px;
 }
 .projetoImagem {
     border: 1px solid white;
     background-color: #D7E4F6;
     width: 50vw;
-    height: 500px;
-    /* padding-left: 30px; */
+    flex: 1;
+    /* max-width: 50%; */
+    /* min-width: 350px; */
+    /* height: 500px; */
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    /* list-style: 0; */
+}
+.celularMockup {
+    position: relative;
+    width: 50vw;
+    max-width: 400px;
+    min-width: 250px;
+}
+.mockupSvg {
+    /* display: block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 627px;
+    width: 311px; */
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+.print {
+  position: absolute;
+  width: 37%; 
+  height: 82%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;   
+  object-position: top;
+  border-radius: 10px; 
+  z-index: 2;
+  
 }
 .projetoDescricao {
+    flex: 1;
     border: 1px solid lightblue;
     width: 51vw;
     background-color: #8291A5;
     color: var(--CorFundo);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.projetoDescricao h1 {
+    font-family: var(--fonte1);
+    font-size: 3.5em;
+    text-shadow: 0.5px 0.5px 0px #D7E4F6;
+     font-weight: 700;
+}
+.projetoDescricao p {
+    font-family: var(--fonte0);
+    font-size: 2em;
+    font-weight: normal;
+}
+.projetoDescricao button {
+    margin-top: 40px;
+    background-color: transparent;
+    border: 3px solid black;
+    width: 200px;
+    height: 70px;
+    
+    font-size: 1.5em;
+    text-align: center;
+}
+.projetoDescricao button:hover {
+    background-color: var(--CorFundo);
+    color: var(--CorDestaque);
+    transition: background-color 0.5s, color 0.5s;
 }

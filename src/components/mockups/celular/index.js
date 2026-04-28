@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MockupCel({ className, size = 300 }) {
+function MockupCel({ className, size = 500 }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,7 @@ function MockupCel({ className, size = 300 }) {
         width="700"
         height="1458"
         rx="90"
-        fill="#0F172A"
+        fill="#0f172a"
         stroke="#24292d"
         strokeWidth="6"
       />
@@ -30,7 +30,7 @@ function MockupCel({ className, size = 300 }) {
         height="1384"
         rx="58"
         fill="#0f0e0e"
-        stroke="#141616" /**1C1C1A */
+        stroke="#141616"
         strokeWidth="12"
       />
 
