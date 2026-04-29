@@ -11,7 +11,11 @@ const Projetos = () => {
         <div className={styles.projetoImagem}>
           <div className={styles.celularMockup}>
             <MockupCel className={styles.mockupSvg} />
-            <img src={PrintSonhario} alt="print oxe" className={styles.print} />
+            <img
+              src={PrintSonhario}
+              alt="Tela inicial Sonhario"
+              className={styles.print}
+            />
           </div>
         </div>
         <div className={styles.projetoDescricao}>
@@ -25,7 +29,7 @@ const Projetos = () => {
           aha
           <MockupCel />
         </div>
-        <div className={styles.projetoDescricao}>uhu</div>
+        <div className={styles.projetoDescricao}>uhu aha</div>
       </section>
     </main>
   );
