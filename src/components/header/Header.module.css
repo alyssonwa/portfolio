@@ -24,9 +24,9 @@
     white-space: nowrap;
 }
 .logoClicavel {
-  cursor: pointer; /* Faz o mouse virar a "mãozinha" */
-  user-select: none; /* Evita que o texto fique azul/selecionado ao clicar rápido */
-   font-size: 1.3em;
+    cursor: pointer;
+    user-select: none; 
+    font-size: 1.3em;
     text-shadow: 2px 2px 0px #3e4a46;
     display:flex;
     align-items: center;

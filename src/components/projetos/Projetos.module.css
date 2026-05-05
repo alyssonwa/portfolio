@@ -7,26 +7,31 @@
     align-items: center;
     gap: 20px;
 }
+.projetosContainer h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-family: var(--fonte1);
+    border-bottom: 1px solid var(--CorDestaque);
+}
 .projetosContainer section {
     display: flex;
-    width: 100%;
+    width: 97%;
     min-height: 400px;
     flex-flow: column-reverse nowrap;
-    align-items: center;
+    align-items: stretch;
     gap: 0px;
-    border-radius: 5px;
 }
 .projetoImagem {
-    border: 1px solid var(--CorFundo);
     background-color: #D7E4F6;
-    width: 80vw;
-    flex: 1;
+    width: 100%;
+    flex: 1 1 0;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    border-radius: 0px 0px 5px 5px;
-    box-shadow: 0.2px 1px 3px var(--CorDestaque);
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 2px 4px 4px -1px #8291A5;
 }
 .celularMockup {
     position: relative;
@@ -58,7 +63,7 @@
 .projetoDescricao {
     flex: 1;
     border: 1px solid var(--CorFundo);
-    width: 80vw;
+    width: 100%;
     background-color: #8291A5;
     color: var(--CorFundo);
     display: flex;
@@ -67,26 +72,26 @@
     align-items: center;
     gap: 20px;
     border-radius: 10px 10px 0px 0px;
-    margin: -5px -5px 0px -5px;
+    border: none;
 }
 .projetoDescricao h1 {
     font-family: var(--fonte1);
     padding-top: 10px;
-    font-size: 2.4em;
-    text-shadow: 0.5px 0.5px 0px #D7E4F6;
-    font-weight: 700;
+    font-size: 2.2em;
+    text-shadow: 0.6px 0.6px 0px #D7E4F6;
+    font-weight: 600;
+    border: none;
 }
 .projetoDescricao p {
     font-family: var(--fonte0);
     font-size: 1.2em;
-    font-weight: bold;
+    font-weight: 500;
     text-align: justify;
     padding-left: 5px;
     padding-right: 5px;
 }
 .projetoDescricao button {
     margin-top: 20px;
-    background-color: transparent;
     background-color: var(--CorFundo);
     color: var(--CorDestaque);
     border: 3px solid black;
@@ -99,114 +104,49 @@
     text-align: center;
 }
 
-
-
-
-
-
-
-
-
 /*desktop configs*/
 @media screen and (min-width: 768px) {
 
 .projetosContainer {
-    border-top: 1px solid var(--CorDestaque);
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    gap: 0.5px;
+    
 }
 .projetosContainer section {
-    display: flex;
     width: 100%;
     height: auto;
     flex-flow: row nowrap;
-    align-items: stretch;
-    gap: 0px;
-    border-radius: 0px;
 }
 .projetoImagem {
-    /* border: 1px solid white; */
-    background-color: #D7E4F6;
     width: 50vw;
-    /* flex: 1; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
     border-radius: 0px;
     box-shadow: none;
 }
-.celularMockup {
-    position: relative;
-    width: 50vw;
-    max-width: 400px;
-    min-width: 250px;
-}
-.mockupSvg {
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: block;
-    position: relative;
-    z-index: 1;
-}
-.print {
-  position: absolute;
-  width: 37%; 
-  height: 82%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;   
-  object-position: top;
-  border-radius: 10px; 
-  z-index: 2;
-  
-}
-.projetoDescricao {
-    flex: 1;
-    /* border: 1px solid lightblue; */
-    width: 50vw;
-    background-color: #8291A5;
-    color: var(--CorFundo);
 
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.projetoDescricao {
+    width: 50vw;
     border-radius: 0px;
     margin: 0;
 }
 .projetoDescricao h1 {
-    font-family: var(--fonte1);
     font-size: 3.5em;
-    text-shadow: 0.5px 0.5px 0px #D7E4F6;
-     font-weight: 700;
 }
 .projetoDescricao p {
-    font-family: var(--fonte0);
     font-size: 1.8em;
     font-weight: normal;
-    padding-left: 15px;;
+    padding-left: 15px;
 }
 .projetoDescricao button {
     margin-top: 40px;
     background-color: transparent;
     color: var(--CorFundo);
-    border: 3px solid black;
     width: 200px;
     height: 70px;
-    
     font-size: 1.5em;
-    text-align: center;
 }
 .projetoDescricao button:hover {
     background-color: var(--CorFundo);
     color: var(--CorDestaque);
     transition: background-color 0.5s, color 0.5s;
 }
+
 }

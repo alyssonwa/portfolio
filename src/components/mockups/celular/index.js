@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MockupCel({ className, size = 500 }) {
+function CelMockup({ className, size = 500 }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -50,4 +50,4 @@ function MockupCel({ className, size = 500 }) {
     </svg>
   );
 }
-export default MockupCel;
+export default CelMockup;

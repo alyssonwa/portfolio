@@ -8,12 +8,7 @@
     background-color: var(--CorFundo);
 }
 
- .conteudo {
-    /* text-align: center; */
-} 
-
 .conteudo h1 {
-    /* font-size: clamp(2.25rem,4vw,7.75rem); */
     font-family: var(--fonte1);
     color: var(--CorLetra);
     
@@ -42,8 +37,6 @@
     line-height: 1.6em;
     display: flex;
     flex-flow: row wrap;
-    /* justify-content: flex-start; */
-    /* padding-top: 30px; */
     padding-left: 10px;
     margin-bottom: 30px;
 }
@@ -70,16 +63,13 @@
  .linkProjetos {
     text-decoration: none;
     display: flex;
-    align-items: center;   /* Centraliza verticalmente ícone e texto */
+    align-items: center;  
     justify-content: center;
-    /* justify-content: center;
-    align-items: center; */
     color: var(--CorDestaque);
     font-weight: bold;
     border-radius: 25px;
     padding: 5px;
     margin-top: 50px;
-    /* padding-top: 30px; */
     background-color: var(--CorDestaqueTransparencia);
     transition: color 0.3s ease;
 }

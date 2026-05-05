@@ -1,16 +1,17 @@
 import React from 'react';
 import styles from './Projetos.module.css';
-import MockupCel from '../mockups/celular';
+import CelMockup from '../mockups/celular';
+import PcMockup from '../mockups/pc';
 import PrintSonhario from './CapasProjetos/sonhario/sonhario.png';
 
 const Projetos = () => {
   return (
     <main className={styles.projetosContainer}>
-      <h1>Projetos</h1>
+      <h1>Meus Projetos</h1>
       <section>
         <div className={styles.projetoImagem}>
           <div className={styles.celularMockup}>
-            <MockupCel className={styles.mockupSvg} />
+            <CelMockup className={styles.mockupSvg} />
             <img
               src={PrintSonhario}
               alt="Tela inicial Sonhario"
@@ -26,10 +27,20 @@ const Projetos = () => {
       </section>
       <section>
         <div className={styles.projetoImagem}>
-          aha
-          <MockupCel />
+          <div className={styles.celularMockup}>
+            <CelMockup className={styles.mockupSvg} />
+            {/* <img
+              src={PrintSonhario}
+              alt="Tela inicial Sonhario"
+              className={styles.print}
+            /> */}
+          </div>
         </div>
-        <div className={styles.projetoDescricao}>uhu aha</div>
+        <div className={styles.projetoDescricao}>
+          <h1>Tavern Talk</h1>
+          <p>Aplicativo web gerador de fichas de RPG</p>
+          <button>Saiba mais...</button>
+        </div>
       </section>
     </main>
   );
