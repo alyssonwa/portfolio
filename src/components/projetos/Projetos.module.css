@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/*configs globais*/
 .projetosContainer {
     border-top: 1px solid var(--CorDestaque);
     display: flex;
@@ -22,17 +23,7 @@
     align-items: stretch;
     gap: 0px;
 }
-.projetoImagem {
-    background-color: #D7E4F6;
-    width: 100%;
-    flex: 1 1 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-radius: 0px 0px 10px 10px;
-    box-shadow: 2px 4px 4px -1px #8291A5;
-}
+
 .celularMockup {
     position: relative;
     width: 50vw;
@@ -60,12 +51,18 @@
   z-index: 2;
   
 }
-.projetoDescricao {
-    flex: 1;
-    border: 1px solid var(--CorFundo);
+ .projetoImagem {
     width: 100%;
-    background-color: #8291A5;
-    color: var(--CorFundo);
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 0px 0px 10px 10px;
+}
+ .projetoDescricao {
+    flex: 1;
+    width: 100%;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -74,15 +71,14 @@
     border-radius: 10px 10px 0px 0px;
     border: none;
 }
-.projetoDescricao h1 {
+ .projetoDescricao h1 {
     font-family: var(--fonte1);
     padding-top: 10px;
-    font-size: 2.2em;
-    text-shadow: 0.6px 0.6px 0px #D7E4F6;
+    font-size: 2.4em;
     font-weight: 600;
     border: none;
 }
-.projetoDescricao p {
+ .projetoDescricao p {
     font-family: var(--fonte0);
     font-size: 1.2em;
     font-weight: 500;
@@ -90,11 +86,8 @@
     padding-left: 5px;
     padding-right: 5px;
 }
-.projetoDescricao button {
+ .projetoDescricao button {
     margin-top: 20px;
-    background-color: var(--CorFundo);
-    color: var(--CorDestaque);
-    border: 3px solid black;
     width: 50%;
     height: auto;
     min-height: 50px;
@@ -103,18 +96,62 @@
     font-size: 1.2em;
     text-align: center;
 }
+/*configs projeto sonhario*/
+.sonhario .projetoImagem {
+    background-color: #D7E4F6;
+    box-shadow: 2px 4px 4px -1px #8291A5;
+}
+.sonhario .projetoDescricao {
+    background-color: #8291A5;
+    color: var(--CorFundo);
+}
+.sonhario .projetoDescricao h1 {
+    text-shadow: 0.6px 0.6px 0px #D7E4F6;
+    border: none;
+}
+.sonhario .projetoDescricao p {
+    color: var(--CorFundo);
+}
+.sonhario .projetoDescricao button {
+    background-color: var(--CorFundo);
+    color: var(--CorDestaque);
+    border: 3px solid black;
+}
 
+/*configs projeto tavern talk*/
+.tavernTalk .projetoImagem {
+    background:  linear-gradient(#8B8B8B,#E2E1E1,#8B8B8B);
+    box-shadow: 2px 4px 5px -1px #8291a5b1;
+}
+.tavernTalk .projetoDescricao {
+    background: linear-gradient(#4B1515, 45%, #17080800);
+}
+.tavernTalk .projetoDescricao h1 {
+    background: linear-gradient(#8B8B8B,#E2E1E1,#8B8B8B);
+    background-clip: text;
+    color: transparent;
+}
+.tavernTalk .projetoDescricao p {
+    background: linear-gradient(#8B8B8B,#E2E1E1,#8B8B8B);
+    background-clip: text;
+    color: transparent;
+}
+.tavernTalk .projetoDescricao button {
+    background:  linear-gradient(#8B8B8B,#E2E1E1,#8B8B8B);
+    color: #600000;
+}
 /*desktop configs*/
 @media screen and (min-width: 768px) {
 
 .projetosContainer {
-    gap: 0.5px;
+    gap: 0px;
     
 }
 .projetosContainer section {
     width: 100%;
     height: auto;
     flex-flow: row nowrap;
+    border-radius: 0;
 }
 .projetoImagem {
     width: 50vw;
@@ -129,24 +166,46 @@
 }
 .projetoDescricao h1 {
     font-size: 3.5em;
+    font-weight: 500;
 }
 .projetoDescricao p {
     font-size: 1.8em;
     font-weight: normal;
     padding-left: 15px;
 }
-.projetoDescricao button {
+ .projetoDescricao button {
     margin-top: 40px;
     background-color: transparent;
-    color: var(--CorFundo);
     width: 200px;
     height: 70px;
     font-size: 1.5em;
 }
-.projetoDescricao button:hover {
+/*configs sonhario desktop*/
+.sonhario .projetoImagem{
+    box-shadow: none;
+}
+.sonhario .projetoDescricao button {
+    background-color: transparent;
+    color: var(--CorFundo);
+}
+.sonhario .projetoDescricao button:hover {
     background-color: var(--CorFundo);
     color: var(--CorDestaque);
     transition: background-color 0.5s, color 0.5s;
+}
+/*configs tavernTalk desktop*/
+.tavernTalk .projetoImagem {
+    box-shadow: none;
+}
+.tavernTalk .projetoDescricao button {
+    background:  radial-gradient(circle at 100%, #8B8B8B,#E2E1E1,#8B8B8B,#E2E1E1,#8B8B8B,#E2E1E1);
+    background-clip: text;
+    color: transparent;
+}
+.tavernTalk .projetoDescricao button:hover {
+    background:  linear-gradient(#8B8B8B,#E2E1E1,#8B8B8B);
+    color: #600000;
+    transition: background 0.5s, color 0.5s;
 }
 
 }

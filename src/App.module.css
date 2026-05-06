@@ -21,7 +21,7 @@ Grandes telas: acima de 1200px.
   background: radial-gradient(
     500px circle at 75% 0%, /* 50% na horizontal, 0% no topo */
     rgba(29, 78, 216, 0.2), /* Um pouco mais intenso já que é fixo */
-    transparent 90%
+    transparent 55%
   );
 }
 
