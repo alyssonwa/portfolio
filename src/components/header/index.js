@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Header.module.css';
 import LogoEstrela from '../icons/logo';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -7,6 +7,22 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 const Header = () => {
   const [menuAberto, setMenuAberto] = useState(false);
+
+  useEffect(() => {
+    if (menuAberto) {
+      // Quando o modal abre, trava o scroll do corpo da página
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Quando o modal fecha, devolve o scroll
+      document.body.style.overflow = 'auto';
+    }
+
+    // Função de limpeza (cleanup)
+    // Garante que o scroll volte se o componente for desmontado inesperadamente
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [menuAberto]); // Só executa quando 'modalAberto' mudar
 
   const alternarMenu = () => {
     setMenuAberto(!menuAberto);

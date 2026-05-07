@@ -30,13 +30,20 @@
     max-width: 400px;
     min-width: 250px;
 }
+.pcMockup {
+    position: relative;
+    width: 50vw;
+    max-width: 700px;
+    min-width: 450px;
+}
 .mockupSvg {
     position: relative;
     width: 100%;
     height: auto;
     display: block;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    
 }
 .print {
   position: absolute;
@@ -50,6 +57,19 @@
   border-radius: 10px; 
   z-index: 2;
   
+}
+.printPc {
+  position: absolute;
+  width: 73%; 
+  height: 59%;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;   
+  object-position: top;
+  border-radius: 7px 7px 1px 1px ; 
+  z-index: 2;
+  overflow: hidden;
 }
  .projetoImagem {
     width: 100%;
@@ -96,6 +116,85 @@
     font-size: 1.2em;
     text-align: center;
 }
+/*configs modal de detalhes*/
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto transparente */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1000; /* Garante que fique acima de TUDO */
+}
+
+/* A caixa branca/cinza centralizada */
+.modalConteudo {
+    background-color: #8291A5; /* Seguindo a cor do seu projeto */
+    padding: 30px 30px 60px 30px;
+    color: white;
+    padding: 40px;
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    max-width: 100vw;
+    max-height: 80vh;
+    position: relative;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    animation: aparecerModal 0.5s ease-out;
+
+    max-height: 85vh; /* Garante que o modal nunca seja maior que a tela */
+    overflow-y: auto; /* Cria um scroll interno APENAS no modal se necessário */
+    
+    /* Dica: Deixe o scroll mais bonito */
+    scrollbar-width: thin;
+    scrollbar-color: var(--CorDestaque) transparent;
+}
+.alçaModal {
+    width: 40px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    margin: -20px auto 20px auto; /* Centraliza e ajusta posição */
+    /* Prepara a suavidade da animação */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: grab; /* Muda o mouse para uma mãozinha de "pegar" */
+
+    /* Aumenta a área de clique sem mudar o visual da barrinha */
+    /* border: 10px solid transparent; */
+    background-clip: padding-box;
+}
+/* Efeito ao clicar/segurar (Puxar) */
+.alçaModal:active {
+    /* Faz a alça crescer um pouco e descer 3px simulando o peso do puxão */
+    transform: scaleX(1.5) translateY(3px);
+    background-color: rgba(255, 255, 255, 0.6); /* Brilha um pouco mais */
+    cursor: grabbing; /* Ícone de mão fechada */
+}
+/* Botão de fechar (X) */
+.fecharModal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Animação para o modal não aparecer do nada */
+@keyframes aparecerModal {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /*configs projeto sonhario*/
 .sonhario .projetoImagem {
     background-color: #D7E4F6;
@@ -139,6 +238,29 @@
 .tavernTalk .projetoDescricao button {
     background:  linear-gradient(#8B8B8B,#E2E1E1,#8B8B8B);
     color: #600000;
+}
+
+/*configs projeto gap*/
+/*configs projeto tavern talk*/
+.gap .projetoImagem {
+    background:  linear-gradient(#005CA9,#2794CD);
+    /* box-shadow: 2px 4px 5px -1px #8291a5b1; */
+}
+.gap .projetoDescricao {
+    background: linear-gradient(#F4F4F4, 45%, var(--CorLetra));
+}
+.gap .projetoDescricao h1 {
+    background: linear-gradient(to right, #005CA9, 70%,#2794CD);
+    background-clip: text;
+    color: transparent;
+}
+.gap .projetoDescricao p {
+    color: #005CA9;
+}
+.gap .projetoDescricao button {
+    background:  linear-gradient(#005CA9,#2794CD);
+    color: var(--CorLetra);
+    /* border: 3px solid #F4F4F4; */
 }
 /*desktop configs*/
 @media screen and (min-width: 768px) {
@@ -205,7 +327,22 @@
 .tavernTalk .projetoDescricao button:hover {
     background:  linear-gradient(#8B8B8B,#E2E1E1,#8B8B8B);
     color: #600000;
-    transition: background 0.5s, color 0.5s;
+    transition:  color 0.5s;
+}
+/*configs gap desktop*/
+.gap .projetoImagem {
+    box-shadow: none;
+}
+.gap .projetoDescricao button {
+    background:  linear-gradient(#005CA9,#2794CD);
+    background-clip: text;
+    color: transparent;
+}
+
+.gap .projetoDescricao button:hover {
+    background:  linear-gradient(#005CA9,#2794CD);
+    color: var(--CorLetra);
+    transition: color 0.5s;
 }
 
 }

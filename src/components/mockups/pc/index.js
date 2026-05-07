@@ -11,13 +11,13 @@ function PcMockup({ className, width = 600, height = 400 }) {
     >
       {/* Tela externa */}
       <rect
-        x="200"
-        y="80"
-        width="1200"
+        x="208"
+        y="77"
+        width="1183"
         height="650"
         rx="25"
         fill="#111"
-        stroke="#333"
+        stroke="#c2c9ce"
         strokeWidth="6"
       />
 
@@ -34,10 +34,10 @@ function PcMockup({ className, width = 600, height = 400 }) {
       <circle cx="800" cy="100" r="6" fill="#2a2a2a" />
 
       {/* Base do notebook */}
-      <rect x="150" y="720" width="1300" height="50" rx="10" fill="#ACADB1" />
+      <rect x="150" y="712" width="1300" height="50" rx="10" fill="#ACADB1" />
 
       {/* Trackpad */}
-      <rect x="700" y="720" width="200" height="40" rx="10" fill="#60626b" />
+      <rect x="700" y="708" width="200" height="40" rx="10" fill="#60626b" />
     </svg>
   );
 }
