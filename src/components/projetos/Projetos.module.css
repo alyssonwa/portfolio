@@ -123,18 +123,17 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto transparente */
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    z-index: 1000; /* Garante que fique acima de TUDO */
+    z-index: 1000;
 }
-
-/* A caixa branca/cinza centralizada */
 .modalConteudo {
-    background-color: #8291A5; /* Seguindo a cor do seu projeto */
+    /* background-color: #8291A5; */
+    background-color: var(--CorFundo);
     padding: 30px 30px 60px 30px;
-    color: white;
+    color: var(--CorLetra);
     padding: 40px;
     border-radius: 15px 15px 0px 0px;
     width: 100%;
@@ -143,7 +142,6 @@
     position: relative;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
     animation: aparecerModal 0.5s ease-out;
-
     max-height: 85vh; /* Garante que o modal nunca seja maior que a tela */
     overflow-y: auto; /* Cria um scroll interno APENAS no modal se necessário */
     
@@ -151,39 +149,56 @@
     scrollbar-width: thin;
     scrollbar-color: var(--CorDestaque) transparent;
 }
+.bannerModal {
+    width: 80vw;
+    background: url('./LogosProjetos/sonhario/sonhario_logo.png');
+}
 .alçaModal {
-    width: 40px;
-    height: 5px;
+    width: 50px;
+    height: 7px;
+    position: relative;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    margin: -20px auto 20px auto; /* Centraliza e ajusta posição */
+    margin: -20px auto 20px auto; 
     /* Prepara a suavidade da animação */
     transition: transform 0.2s ease, background-color 0.2s ease;
-    cursor: grab; /* Muda o mouse para uma mãozinha de "pegar" */
-
-    /* Aumenta a área de clique sem mudar o visual da barrinha */
-    /* border: 10px solid transparent; */
+    cursor: grab; 
+    /* controle da posição da cor de fundo */
     background-clip: padding-box;
+    /*evita que o usuario seleciona o conteudo ao clicar e arrastar a alça*/
+    user-select: none;
+    -webkit-user-select: none;
+    /*evita o scroll do site em dispositivos móveis ao arrastar o modal*/
+    touch-action: none; 
+
+}
+.alçaModal::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px; 
+    height: 100px;
+    background-color: transparent; 
 }
 /* Efeito ao clicar/segurar (Puxar) */
 .alçaModal:active {
-    /* Faz a alça crescer um pouco e descer 3px simulando o peso do puxão */
     transform: scaleX(1.5) translateY(3px);
-    background-color: rgba(255, 255, 255, 0.6); /* Brilha um pouco mais */
-    cursor: grabbing; /* Ícone de mão fechada */
+    background-color: rgba(255, 255, 255, 0.6); 
+    cursor: grabbing; 
 }
 /* Botão de fechar (X) */
 .fecharModal {
-    position: absolute;
+     position: absolute;
     top: 15px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
+    right: 22px;
     cursor: pointer;
+    background-color: var(--CorFundo);
+    color: var(--CorFundo2);
+    border: 1px double var(--CorLetra);
+    border-radius: 15px;
 }
-
 /* Animação para o modal não aparecer do nada */
 @keyframes aparecerModal {
     from {

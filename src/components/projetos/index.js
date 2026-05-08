@@ -1,8 +1,9 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './Projetos.module.css';
 import CelMockup from '../mockups/celular';
 import PcMockup from '../mockups/pc';
+import CloseIcon from '@mui/icons-material/Close';
 import PrintSonhario from './CapasProjetos/sonhario/sonhario.png';
 import PrintTavernTalk from './CapasProjetos/tavernTalk/tavern_talk.png';
 import PrintGap from './CapasProjetos/gap/gap.png';
@@ -18,10 +19,42 @@ const Projetos = () => {
       document.body.style.overflow = 'auto';
     }
     return () => {
+      // O "return" é a limpeza: ele roda quando o modal fecha
+      // ou quando o usuário sai daquela página.
       document.body.style.overflow = 'auto';
     };
   }, [modalAberto]); // Só executa quando 'modalAberto' mudar
 
+  const [arrastandoPos, setArrastandoPos] = useState(0); // Rastreia o movimento
+  const touchStartPos = useRef(0); // Guarda onde o toque começou
+
+  const iniciarArrasto = (e) => {
+    // Pega a posição inicial (mouse ou touch)
+    touchStartPos.current = e.clientY || e.touches[0].clientY;
+  };
+
+  const movendoArrasto = (e) => {
+    if (touchStartPos.current === 0) return;
+
+    const currentPos = e.clientY || e.touches[0].clientY;
+    const diferenca = currentPos - touchStartPos.current;
+
+    // Só permite arrastar para BAIXO (diferença positiva)
+    if (diferenca > 0) {
+      setArrastandoPos(diferenca);
+    }
+  };
+
+  const finalizarArrasto = () => {
+    // Se arrastou mais de 150px (ou ajuste para a metade), fecha o modal
+    if (arrastandoPos > 150) {
+      setModalAberto(false);
+    }
+
+    // Reseta as posições
+    setArrastandoPos(0);
+    touchStartPos.current = 0;
+  };
   const alternarModal = () => {
     setModalAberto(!modalAberto);
   };
@@ -47,19 +80,33 @@ const Projetos = () => {
       </section>
       {/* Renderização Condicional do Modal */}
       {modalAberto && (
-        <div className={styles.modalOverlay} onClick={alternarModal}>
+        <div
+          className={styles.modalOverlay}
+          onClick={alternarModal}
+          onMouseMove={movendoArrasto}
+          onMouseUp={finalizarArrasto}
+          onTouchMove={movendoArrasto}
+          onTouchEnd={finalizarArrasto}
+        >
           <div
             className={styles.modalConteudo}
             onClick={(e) => e.stopPropagation()}
+            style={{
+              transform: `translateY(${arrastandoPos}px)`,
+              transition:
+                arrastandoPos === 0 ? 'transform 0.5s ease-out' : 'none',
+            }}
           >
             <div
               className={styles.alçaModal}
-              onClick={alternarModal}
+              onMouseDown={iniciarArrasto}
+              onTouchStart={iniciarArrasto}
               title="Fechar"
             ></div>
             <button className={styles.fecharModal} onClick={alternarModal}>
-              &times;
+              <CloseIcon fontSize="small" />
             </button>
+            <div className={styles.bannerModal}></div>
             <h2>Detalhes do Sonhário</h2>
             <p>
               Aqui você coloca a descrição completa, tecnologias usadas e links.
