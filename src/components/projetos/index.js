@@ -7,6 +7,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import PrintSonhario from './CapasProjetos/sonhario/sonhario.png';
 import PrintTavernTalk from './CapasProjetos/tavernTalk/tavern_talk.png';
 import PrintGap from './CapasProjetos/gap/gap.png';
+import LogoSonhario from './LogosProjetos/sonhario/logo.png';
+import LoginSonhario from './LogosProjetos/sonhario/tela_login.png';
+
+import LogoReact from '../icons/react';
 
 const Projetos = () => {
   const [modalAberto, setModalAberto] = useState(false);
@@ -106,17 +110,34 @@ const Projetos = () => {
             <button className={styles.fecharModal} onClick={alternarModal}>
               <CloseIcon fontSize="small" />
             </button>
-            <div className={styles.bannerModal}></div>
-            <h2>Detalhes do Sonhário</h2>
+            <div className={styles.bannerModal}>
+              <LogoReact className={styles.tecnologias} />
+              <img
+                src={LogoSonhario}
+                alt="Logo Sonhario"
+                className={styles.logoBanner}
+              />
+              <img
+                src={LoginSonhario}
+                alt="Login Sonhario"
+                className={styles.logoBanner}
+              />
+            </div>
+            <h2>Sonhario</h2>
             <p>
-              Aqui você coloca a descrição completa, tecnologias usadas e links.
+              Aplicativo desenvolvido com o objetivo principal de obtenção de
+              dados para pesquisa acadêmica, visto que foi um projeto realizado
+              para o trabalho de conclusão de curso. Tem como funcionalidade
+              principal o registro de hábitos de sono do usuário de acordo com o
+              tempo, oferecendo feedback visual gráfico da qualidade do sono ao
+              longo do tempo, além de sugestões personalizadas via LLM.
             </p>
             {/* Exemplo de lista de tecnologias */}
-            <ul>
+            {/* <ul>
               <li>React + CSS Modules</li>
               <li>Figma para UI/UX</li>
               <li>PokeAPI (ou a API que você usou)</li>
-            </ul>
+            </ul> */}
           </div>
         </div>
       )}

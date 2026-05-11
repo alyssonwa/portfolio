@@ -149,9 +149,49 @@
     scrollbar-width: thin;
     scrollbar-color: var(--CorDestaque) transparent;
 }
+.tecnologias {
+    align-self: flex-end;
+}
+.modalConteudo h2 {
+    font-weight: 500;
+    font-family: var(--fonte1);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+.modalConteudo p {
+    font-family: var(--fonte0);
+    font-size: 1em;
+    text-align: justify;
+    line-height: 1.6em;
+    text-align: justify;
+}
 .bannerModal {
-    width: 80vw;
-    background: url('./LogosProjetos/sonhario/sonhario_logo.png');
+    margin-top: 30px;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(180deg, rgba(33,40,74,0.59) 0%, rgba(55,71,150,0.59) 100%);
+    background-color: transparent;
+    border: 1px solid color-mix(in oklab,var(--CorLetra)15%,transparent);
+    /* background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+.logoBanner {
+    width: auto;
+    max-width: 60%;
+    max-height: 90%;
+
+    object-fit: contain;
+    filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
+    border-radius: 15px;
 }
 .alçaModal {
     width: 50px;
@@ -179,7 +219,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100px; 
-    height: 100px;
+    height: 60px;
     background-color: transparent; 
 }
 /* Efeito ao clicar/segurar (Puxar) */
@@ -256,10 +296,10 @@
 }
 
 /*configs projeto gap*/
-/*configs projeto tavern talk*/
 .gap .projetoImagem {
     background:  linear-gradient(#005CA9,#2794CD);
     /* box-shadow: 2px 4px 5px -1px #8291a5b1; */
+    box-shadow: 2px 4px 4px -1px #8291A5;
 }
 .gap .projetoDescricao {
     background: linear-gradient(#F4F4F4, 45%, var(--CorLetra));
