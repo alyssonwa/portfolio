@@ -11,6 +11,9 @@ import LogoSonhario from './LogosProjetos/sonhario/logo.png';
 import LoginSonhario from './LogosProjetos/sonhario/tela_login.png';
 
 import LogoReact from '../icons/react';
+import LogoExpo from '../icons/expo';
+import LogoDjango from '../icons/django';
+import LogoFigma from '../icons/figma';
 
 const Projetos = () => {
   const [modalAberto, setModalAberto] = useState(false);
@@ -111,7 +114,6 @@ const Projetos = () => {
               <CloseIcon fontSize="small" />
             </button>
             <div className={styles.bannerModal}>
-              <LogoReact className={styles.tecnologias} />
               <img
                 src={LogoSonhario}
                 alt="Logo Sonhario"
@@ -124,20 +126,50 @@ const Projetos = () => {
               />
             </div>
             <h2>Sonhario</h2>
+            <article className={styles.tecnologiasIcons}>
+              <abbr>
+                <LogoFigma />
+              </abbr>
+              <abbr>
+                <LogoDjango />
+              </abbr>
+              <abbr>
+                <LogoReact />
+              </abbr>
+              <abbr>
+                <LogoExpo />
+              </abbr>
+            </article>
             <p>
-              Aplicativo desenvolvido com o objetivo principal de obtenção de
-              dados para pesquisa acadêmica, visto que foi um projeto realizado
-              para o trabalho de conclusão de curso. Tem como funcionalidade
-              principal o registro de hábitos de sono do usuário de acordo com o
-              tempo, oferecendo feedback visual gráfico da qualidade do sono ao
-              longo do tempo, além de sugestões personalizadas via LLM.
+              Aplicativo mobile desenvolvido com o objetivo de analisar a rotina
+              de sono do usuário a partir dos dados inseridos. Sendo possível
+              utilizá-los para previsão de produtividade e sugestões de
+              melhorias a partir de um modelo de aprendizagem de máquina, além
+              de funcionar como diário de hábitos de sono, com geração de
+              gráficos e recomendações textuais de acordo com o seu histórico de
+              sono.
             </p>
-            {/* Exemplo de lista de tecnologias */}
-            {/* <ul>
-              <li>React + CSS Modules</li>
-              <li>Figma para UI/UX</li>
-              <li>PokeAPI (ou a API que você usou)</li>
-            </ul> */}
+            {/* lista de tecnologias e objetivos */}
+            <div className={styles.cardsModal}>
+              <div className={styles.cardItem}>
+                <h3>Tecnologias Utilizadas</h3>
+                <ul className={styles.cardLista}>
+                  <li>React Native</li>
+                  <li>Figma</li>
+                  <li>Django</li>
+                  <li>React Expo</li>
+                </ul>
+              </div>
+              <div className={styles.cardItem}>
+                <h3>Objetivos alcançados</h3>
+                <ul className={styles.cardLista}>
+                  <li>Previsões de produtividade</li>
+                  <li>Feedback gráfico e textual</li>
+                  <li>App funcional multiplataforma</li>
+                  <li>Diário de sono</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       )}
