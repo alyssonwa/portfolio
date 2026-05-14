@@ -4,6 +4,7 @@ import styles from './Projetos.module.css';
 import CelMockup from '../mockups/celular';
 import PcMockup from '../mockups/pc';
 import CloseIcon from '@mui/icons-material/Close';
+import DescriptionIcon from '@mui/icons-material/Description';
 import PrintSonhario from './CapasProjetos/sonhario/sonhario.png';
 import PrintTavernTalk from './CapasProjetos/tavernTalk/tavern_talk.png';
 import PrintGap from './CapasProjetos/gap/gap.png';
@@ -14,6 +15,7 @@ import LogoReact from '../icons/react';
 import LogoExpo from '../icons/expo';
 import LogoDjango from '../icons/django';
 import LogoFigma from '../icons/figma';
+import LogoGithub from '../icons/github';
 
 const Projetos = () => {
   const [modalAberto, setModalAberto] = useState(false);
@@ -124,9 +126,23 @@ const Projetos = () => {
                 alt="Login Sonhario"
                 className={styles.logoBanner}
               />
+              <article className={styles.tecnologiasDesktop}>
+                <abbr>
+                  <LogoFigma />
+                </abbr>
+                <abbr>
+                  <LogoDjango />
+                </abbr>
+                <abbr>
+                  <LogoReact />
+                </abbr>
+                <abbr>
+                  <LogoExpo />
+                </abbr>
+              </article>
             </div>
             <h2>Sonhario</h2>
-            <article className={styles.tecnologiasIcons}>
+            <article className={styles.tecnologiasMobile}>
               <abbr>
                 <LogoFigma />
               </abbr>
@@ -170,6 +186,53 @@ const Projetos = () => {
                 </ul>
               </div>
             </div>
+            {/*Minha contribuição e contexto/detalhes do projeto */}
+            <div className={styles.detalhesProjeto}>
+              <h3>Minha contribuição e contexto do projeto</h3>
+              <p>
+                Neste projeto, participei principalmente como UX designer,
+                auxiliando na prototipação das telas do aplicativo no figma e,
+                posteriormente, recriando essas telas no código juntamente ao
+                time de front-end, em que buscamos criar um fluxo simples,
+                intuitivo e dinâmico para o usuário, utilizando o framework
+                Expo.
+              </p>
+              <p>
+                Apesar de termos obtido uma aplicação funcional, ainda há
+                barreiras no desempenho devido a limitações de hospedagem,
+                publicação em lojas de aplicativo e banco de dados gratuitos.
+                Isso se deve em grande parte ao contexto de desenvolvimento ter
+                sido voltado principalmente para fins acadêmicos, visto que o
+                projeto foi uma das principais bases do nosso TCC, auxiliando
+                para fins de pesquisa acerca da higiene do sono, influência da
+                cafeína e consistência de exercícios físicos para o sono.
+              </p>
+            </div>
+            <nav className={styles.linksProjeto}>
+              <h3>Links Relevantes</h3>
+              <ul>
+                <li>
+                  <a
+                    href="https://github.com/omarcosss/sonhario-front"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Github
+                    <LogoGithub />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://bunny-sammy.github.io/sonhario-api/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Página de documentação e download
+                    <DescriptionIcon />
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       )}
