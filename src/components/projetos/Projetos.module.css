@@ -130,7 +130,6 @@
     z-index: 1000;
 }
 .modalConteudo {
-    /* background-color: #8291A5; */
     background-color: var(--CorFundo);
     padding: 30px 30px 60px 30px;
     color: var(--CorLetra);
@@ -142,19 +141,21 @@
     position: relative;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
     animation: aparecerModal 0.5s ease-out;
-    max-height: 85vh; /* Garante que o modal nunca seja maior que a tela */
-    overflow-y: auto; /* Cria um scroll interno APENAS no modal se necessário */
-    
-    /* Dica: Deixe o scroll mais bonito */
+    max-height: 85vh; 
+    overflow-y: auto; 
     scrollbar-width: thin;
     scrollbar-color: var(--CorFundo2) transparent;
+}
+
+.limitadorTexto {
+    width: 100%;
 }
 
 .modalConteudo h2 {
     font-weight: 500;
     font-family: var(--fonte1);
     font-size: 2.5em;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: justify;
 }
 .modalConteudo h3 {
@@ -163,7 +164,7 @@
     font-weight: 600;
     text-align: left;
     max-width: 300px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 .modalConteudo p {
     max-width: 600px;
@@ -273,7 +274,6 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    /* background-color: blue; */
     gap: 10px;
     width: 100%;
 }
@@ -283,7 +283,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 50%;          
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 .cardLista {
     display: flex;
@@ -391,11 +391,14 @@
 .gap .projetoDescricao button {
     background:  linear-gradient(#005CA9,#2794CD);
     color: var(--CorLetra);
-    /* border: 3px solid #F4F4F4; */
 }
 
 
+
+
+
 /*desktop configs*/
+
 @media screen and (min-width: 768px) {
 
 .projetosContainer {
@@ -434,6 +437,12 @@
     width: 200px;
     height: 70px;
     font-size: 1.5em;
+}
+.limitadorTexto {
+    max-width: 1000px; 
+    margin: 0 auto;   
+    padding: 0 10px;
+    /* background-color: lightcoral; */
 }
 /*configs modal de detalhes desktop*/
 .bannerModal:hover .tecnologiasDesktop {
@@ -476,6 +485,50 @@
     min-height: 400px;
     margin: auto;
 }
+.modalConteudo {
+    position: static;
+}
+
+.modalConteudo h2 {
+    margin-top: 20px;
+}
+.modalConteudo p {
+ margin: auto;
+ margin-bottom: 40px;
+ max-width: 800px;
+
+}
+
+.linksProjeto ul {
+    justify-content: center;
+    gap: 16px;
+}
+.linksProjeto li a {
+    position: relative;
+    background: transparent;
+    z-index: 1;
+}
+.linksProjeto li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background: linear-gradient(180deg, rgba(33,40,74,0.59) 0%, rgba(55,71,150,0.59) 100%);
+    border-radius: 25px;
+    
+    /* ESTADO INICIAL: Invisível */
+    opacity: 0;
+    z-index: -1;
+    
+    /* animação da opacidade */
+    transition: opacity 0.5s ease;
+}
+.linksProjeto li a:hover::before {
+   opacity: 1;
+}
 /*configs sonhario desktop*/
 .sonhario .projetoImagem{
     box-shadow: none;
@@ -494,29 +547,63 @@
     box-shadow: none;
 }
 .tavernTalk .projetoDescricao button {
-    background:  radial-gradient(circle at 100%, #8B8B8B,#E2E1E1,#8B8B8B,#E2E1E1,#8B8B8B,#E2E1E1);
-    background-clip: text;
-    color: transparent;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    color: #E2E1E1;
+    transition: color 0.5s ease;
+}
+
+.tavernTalk .projetoDescricao button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:  linear-gradient(#8B8B8B,#E2E1E1,#8B8B8B);
+
+    opacity: 0;
+    z-index: -1;
+
+    transition: opacity 0.5s ease;
+}
+.tavernTalk .projetoDescricao button:hover::before{
+    opacity: 1;
 }
 .tavernTalk .projetoDescricao button:hover {
-    background:  linear-gradient(#8B8B8B,#E2E1E1,#8B8B8B);
     color: #600000;
-    transition:  color 0.5s;
 }
 /*configs gap desktop*/
 .gap .projetoImagem {
     box-shadow: none;
 }
 .gap .projetoDescricao button {
-    background:  linear-gradient(#005CA9,#2794CD);
-    background-clip: text;
-    color: transparent;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    color: #005CA9;
+    transition: color 0.5s ease;
 }
-
-.gap .projetoDescricao button:hover {
+.gap .projetoDescricao button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background:  linear-gradient(#005CA9,#2794CD);
-    color: var(--CorLetra);
-    transition: color 0.5s;
+
+    opacity: 0;
+    z-index: -1;
+
+    transition: opacity 0.5s ease;
+}
+.gap .projetoDescricao button:hover::before {
+    opacity: 1;
+}
+.gap .projetoDescricao button:hover {
+    color: var(--CorLetra);  
 }
 
 }

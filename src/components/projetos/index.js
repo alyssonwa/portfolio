@@ -141,99 +141,104 @@ const Projetos = () => {
                 </abbr>
               </article>
             </div>
-            <h2>Sonhario</h2>
-            <article className={styles.tecnologiasMobile}>
-              <abbr>
-                <LogoFigma />
-              </abbr>
-              <abbr>
-                <LogoDjango />
-              </abbr>
-              <abbr>
-                <LogoReact />
-              </abbr>
-              <abbr>
-                <LogoExpo />
-              </abbr>
-            </article>
-            <p>
-              Aplicativo mobile desenvolvido com o objetivo de analisar a rotina
-              de sono do usuário a partir dos dados inseridos. Sendo possível
-              utilizá-los para previsão de produtividade e sugestões de
-              melhorias a partir de um modelo de aprendizagem de máquina, além
-              de funcionar como diário de hábitos de sono, com geração de
-              gráficos e recomendações textuais de acordo com o seu histórico de
-              sono.
-            </p>
-            {/* lista de tecnologias e objetivos */}
-            <div className={styles.cardsModal}>
-              <div className={styles.cardItem}>
-                <h3>Tecnologias Utilizadas</h3>
-                <ul className={styles.cardLista}>
-                  <li>React Native</li>
-                  <li>Figma</li>
-                  <li>Django</li>
-                  <li>React Expo</li>
-                </ul>
-              </div>
-              <div className={styles.cardItem}>
-                <h3>Objetivos alcançados</h3>
-                <ul className={styles.cardLista}>
-                  <li>Previsões de produtividade</li>
-                  <li>Feedback gráfico e textual</li>
-                  <li>App funcional multiplataforma</li>
-                  <li>Diário de sono</li>
-                </ul>
-              </div>
-            </div>
-            {/*Minha contribuição e contexto/detalhes do projeto */}
-            <div className={styles.detalhesProjeto}>
-              <h3>Minha contribuição e contexto do projeto</h3>
+            <div className={styles.limitadorTexto}>
+              <h2>Sonhario</h2>
+              <article className={styles.tecnologiasMobile}>
+                <abbr>
+                  <LogoFigma />
+                </abbr>
+                <abbr>
+                  <LogoDjango />
+                </abbr>
+                <abbr>
+                  <LogoReact />
+                </abbr>
+                <abbr>
+                  <LogoExpo />
+                </abbr>
+              </article>
               <p>
-                Neste projeto, participei principalmente como UX designer,
-                auxiliando na prototipação das telas do aplicativo no figma e,
-                posteriormente, recriando essas telas no código juntamente ao
-                time de front-end, em que buscamos criar um fluxo simples,
-                intuitivo e dinâmico para o usuário, utilizando o framework
-                Expo.
+                Aplicativo mobile desenvolvido com o objetivo de analisar a
+                rotina de sono do usuário a partir dos dados inseridos. Sendo
+                possível utilizá-los para previsão de produtividade e sugestões
+                de melhorias a partir de um modelo de aprendizagem de máquina,
+                além de funcionar como diário de hábitos de sono, com geração de
+                gráficos e recomendações textuais de acordo com o seu histórico
+                de sono.
               </p>
-              <p>
-                Apesar de termos obtido uma aplicação funcional, ainda há
-                barreiras no desempenho devido a limitações de hospedagem,
-                publicação em lojas de aplicativo e banco de dados gratuitos.
-                Isso se deve em grande parte ao contexto de desenvolvimento ter
-                sido voltado principalmente para fins acadêmicos, visto que o
-                projeto foi uma das principais bases do nosso TCC, auxiliando
-                para fins de pesquisa acerca da higiene do sono, influência da
-                cafeína e consistência de exercícios físicos para o sono.
-              </p>
+              {/* lista de tecnologias e objetivos */}
+              <div className={styles.cardsModal}>
+                <div className={styles.cardItem}>
+                  <h3>Tecnologias Utilizadas</h3>
+                  <ul className={styles.cardLista}>
+                    <li>React Native</li>
+                    <li>Figma</li>
+                    <li>Django</li>
+                    <li>React Expo</li>
+                  </ul>
+                </div>
+                <div className={styles.cardItem}>
+                  <h3>Objetivos alcançados</h3>
+                  <ul className={styles.cardLista}>
+                    <li>Previsões de produtividade</li>
+                    <li>Feedback gráfico e textual</li>
+                    <li>App funcional multiplataforma</li>
+                    <li>Diário de sono</li>
+                  </ul>
+                </div>
+              </div>
+              {/*Minha contribuição e contexto/detalhes do projeto */}
+              <div className={styles.detalhesProjeto}>
+                <h3>Minha contribuição e contexto do projeto</h3>
+                <p>
+                  Neste projeto, participei principalmente como UX designer,
+                  auxiliando na prototipação das telas do aplicativo no figma e,
+                  posteriormente, recriando essas telas no código juntamente ao
+                  time de front-end, em que buscamos criar um fluxo simples,
+                  intuitivo e dinâmico para o usuário, utilizando o framework
+                  Expo.
+                </p>
+                <p>
+                  Apesar de termos obtido uma aplicação funcional, ainda há
+                  barreiras no desempenho devido a limitações de hospedagem,
+                  publicação em lojas de aplicativo e banco de dados gratuitos.
+                  Isso se deve em grande parte ao contexto de desenvolvimento
+                  ter sido voltado principalmente para fins acadêmicos, visto
+                  que o projeto foi uma das principais bases do nosso TCC,
+                  auxiliando para fins de pesquisa acerca da higiene do sono,
+                  influência da cafeína e consistência de exercícios físicos
+                  para o sono.
+                </p>
+              </div>
+              <nav className={styles.linksProjeto}>
+                <h3>Links Relevantes:</h3>
+                <ul>
+                  <li>
+                    <a
+                      href="https://github.com/omarcosss/sonhario-front"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Github
+                      <LogoGithub />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://bunny-sammy.github.io/sonhario-api/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Página de documentação e download
+                      <DescriptionIcon />
+                    </a>
+                  </li>
+                </ul>
+              </nav>
             </div>
-            <nav className={styles.linksProjeto}>
-              <h3>Links Relevantes</h3>
-              <ul>
-                <li>
-                  <a
-                    href="https://github.com/omarcosss/sonhario-front"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Github
-                    <LogoGithub />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://bunny-sammy.github.io/sonhario-api/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Página de documentação e download
-                    <DescriptionIcon />
-                  </a>
-                </li>
-              </ul>
-            </nav>
+            {/*fim limitador de texto */}
           </div>
+          {/* fim modal conteudo */}
         </div>
       )}
       <section className={styles.tavernTalk}>
