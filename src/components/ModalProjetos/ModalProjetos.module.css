@@ -1,0 +1,309 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1000;
+}
+.modalConteudo {
+    background-color: var(--CorFundo);
+    padding: 30px 30px 60px 30px;
+    color: var(--CorLetra);
+    padding: 40px;
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    max-width: 100vw;
+    max-height: 80vh;
+    position: relative;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    animation: aparecerModal 0.5s ease-out;
+    max-height: 85vh; 
+    overflow-y: auto; 
+    scrollbar-width: thin;
+    scrollbar-color: var(--CorFundo2) transparent;
+}
+
+.limitadorTexto {
+    width: 100%;
+}
+
+.modalConteudo h2 {
+    font-weight: 500;
+    font-family: var(--fonte1);
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+.modalConteudo h3 {
+    font-family: var(--fonte1);
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: left;
+    max-width: 300px;
+    margin-bottom: 25px;
+}
+.modalConteudo p {
+    max-width: 600px;
+    font-family: var(--fonte0);
+    font-size: 1.01em;
+    font-weight: normal;
+    text-align: justify;
+    line-height: 1.9;
+    text-align: left;
+    letter-spacing: 0.01em;
+    margin-bottom: 30px;
+}
+.bannerModal {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(180deg, rgba(33,40,74,0.59) 0%, rgba(55,71,150,0.59) 100%);
+    background-color: transparent;
+    border: 1px solid color-mix(in oklab,var(--CorLetra)15%,transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+.logoBanner {
+    width: auto;
+    max-width: 60%;
+    max-height: 90%;
+
+    object-fit: contain;
+    filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
+    border-radius: 15px;
+}
+.tecnologiasMobile {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.tecnologiasDesktop {
+    display: none;
+}
+.alçaModal {
+    width: 50px;
+    height: 7px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    margin: -20px auto 20px auto; 
+    /* Prepara a suavidade da animação */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: grab; 
+    /* controle da posição da cor de fundo */
+    background-clip: padding-box;
+    /*evita que o usuario seleciona o conteudo ao clicar e arrastar a alça*/
+    user-select: none;
+    -webkit-user-select: none;
+    /*evita o scroll do site em dispositivos móveis ao arrastar o modal*/
+    touch-action: none; 
+
+}
+.alçaModal::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px; 
+    height: 60px;
+    background-color: transparent; 
+}
+/* Efeito ao clicar/segurar (Puxar) */
+.alçaModal:active {
+    transform: scaleX(1.5) translateY(3px);
+    background-color: rgba(255, 255, 255, 0.6); 
+    cursor: grabbing; 
+}
+/* Botão de fechar (X) */
+.fecharModal {
+     position: absolute;
+    top: 15px;
+    right: 22px;
+    cursor: pointer;
+    background-color: var(--CorFundo);
+    color: var(--CorFundo2);
+    border: 1px double var(--CorLetra);
+    border-radius: 15px;
+}
+/* Animação para o modal não aparecer do nada */
+@keyframes aparecerModal {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.cardsModal {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+.cardItem {
+    display: flex;
+    flex-flow: column wrap; 
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;          
+    margin-bottom: 40px;
+}
+.cardLista {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    width: 95%;
+    min-height: 150px;
+    border: 1px solid color-mix(in oklab,var(--CorLetra)35%,transparent);
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-right: 5px;
+    background: linear-gradient(180deg, rgba(33,40,74,0.59) 0%, rgba(55,71,150,0.59) 100%);
+}
+
+
+.cardLista li{
+    font-family: var(--fonte0);
+    font-size: 1.1em;
+    line-height: 1.5;
+    padding-left: 10px;
+    /* border: 1px solid white; */
+}
+.linksProjeto ul {
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+.linksProjeto li a {
+    text-decoration: none;
+    padding: 15px;
+    font-size: 1.2em;
+    background: linear-gradient(180deg, rgba(33,40,74,0.59) 0%, rgba(55,71,150,0.59) 100%);
+    color: var(--CorLetra);
+    border-radius: 25px;
+    display:flex;
+    gap:10px;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+/*Configs desktop*/
+@media screen and (min-width: 768px) {
+    .limitadorTexto {
+    max-width: 1000px; 
+    margin: 0 auto;   
+    padding: 0 10px;
+    /* background-color: lightcoral; */
+}
+/*configs modal de detalhes desktop*/
+.bannerModal:hover .tecnologiasDesktop {
+    opacity: 1;
+    visibility: visible;
+}
+.tecnologiasDesktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Escurece o fundo */
+    
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 15px;
+    gap: 20px;
+    
+    /* Esconde por padrão */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease; /*animação de esconder*/
+}
+.tecnologiasMobile {
+    display: none;
+}
+.tecnologiasDesktop abbr {
+    transform: translateX(-20px);
+    transition: transform 0.7s ease;
+}
+/* Faz os ícones surgire um pouco da esquerda
+    na animação */
+.bannerModal:hover .tecnologiasDesktop abbr {
+    transform: translateX(0); /*onde termina a animação*/
+}
+.bannerModal {
+    max-width: 1000px;
+    min-height: 400px;
+    margin: auto;
+}
+.modalConteudo {
+    position: static;
+}
+
+.modalConteudo h2 {
+    margin-top: 20px;
+}
+.modalConteudo p {
+ margin: auto;
+ margin-bottom: 40px;
+ max-width: 800px;
+
+}
+
+.linksProjeto ul {
+    justify-content: center;
+    gap: 16px;
+}
+.linksProjeto li a {
+    position: relative;
+    background: transparent;
+    z-index: 1;
+}
+.linksProjeto li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background: linear-gradient(180deg, rgba(33,40,74,0.59) 0%, rgba(55,71,150,0.59) 100%);
+    border-radius: 25px;
+    
+    /* ESTADO INICIAL: Invisível */
+    opacity: 0;
+    z-index: -1;
+    
+    /* animação da opacidade */
+    transition: opacity 0.5s ease;
+}
+.linksProjeto li a:hover::before {
+   opacity: 1;
+}
+}
