@@ -1,11 +1,10 @@
 import React from 'react';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import ModalProjetos from '../ModalProjetos/index.js';
 import styles from './Projetos.module.css';
 import CelMockup from '../mockups/celular';
 import PcMockup from '../mockups/pc';
 
-import CloseIcon from '@mui/icons-material/Close';
 import DescriptionIcon from '@mui/icons-material/Description';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
@@ -32,8 +31,7 @@ import LogoNext from '../icons/next';
 import LogoMySQL from '../icons/mySQL';
 import LogoJavaScript from '../icons/javascript';
 
-// 2. COMPONENTE AUXILIAR PARA OS ÍCONES DO BANNER
-// Criamos este pequeno componente para envelopar os SVGs do Sonhario
+//COMPONENTE AUXILIAR PARA OS ÍCONES DO BANNER
 const IconesSonhario = () => (
   <>
     <abbr title="Figma">
@@ -67,7 +65,7 @@ const dadosSonhario = {
   descricao:
     'Aplicativo mobile desenvolvido com o objetivo de analisar a rotina de sono do usuário a partir dos dados inseridos. Sendo possível utilizá-los para previsão de produtividade e sugestões de melhorias a partir de um modelo de aprendizagem de máquina, além de funcionar como diário de hábitos de sono, com geração de gráficos e recomendações textuais de acordo com o seu histórico de sono.',
   tecnologias: ['React Native', 'Figma', 'Django', 'React Expo', 'PostgreSQL'],
-  iconesTecnologias: IconesSonhario, // Passamos o componente de ícones aqui
+  iconesTecnologias: IconesSonhario,
   objetivos: [
     'Previsões de produtividade',
     'Feedback gráfico e textual',
@@ -107,6 +105,9 @@ const IconesTavernTalk = () => (
     <abbr title="MongoDB">
       <LogoMongoDB />
     </abbr>
+    <abbr title="Vercel">
+      <LogoVercel />
+    </abbr>
   </>
 );
 
@@ -120,8 +121,8 @@ const dadosTavernTalk = {
   corFundoLink: '#4b1515ee',
   descricao:
     'Aplicação web mobile first feita com o intuito de facilitar a criação de fichas de personagens de RPG, utilizando a base do RPG de Dungeons and Dragons(D&D). Em que o usuário seleciona as opções para criação do personagem por meio de um fluxo simples guiado por um chatbot, ao final do processo o gerador de ficha salva automaticamente as informações setadas pelo usuário e apresenta os dados do personagem de forma estilizada, incluindo detalhes númericos como os atributos e nível do personagem.',
-  tecnologias: ['React', 'Figma', 'Next', 'MongoDB'],
-  iconesTecnologias: IconesTavernTalk, // Passamos o componente de ícones aqui
+  tecnologias: ['React', 'Figma', 'Next', 'MongoDB', 'Vercel'],
+  iconesTecnologias: IconesTavernTalk,
   objetivos: [
     'Gerador de fichas de RPG',
     'Interação guiada com chatbot',
@@ -164,7 +165,7 @@ const IconesGap = () => (
   </>
 );
 
-// 3. OBJETO dOS DADOS DO TAVERN-TALK
+// 3. OBJETO dOS DADOS DO GAP
 const dadosGap = {
   titulo: 'GAP',
   logoBanner: LogoGap,
@@ -175,7 +176,7 @@ const dadosGap = {
   descricao:
     'Sistema desenvolvido em React para o gerenciamento de atribuições e projetos. Utilizado principalmente para uso interno do setor de TI da SEDUC/AL, de forma a facilitar a visualização e gerenciamento dos projetos em andamento no setor. O sistema possui funcões úteis nesse sentido, como a visualização do andamento dos projetos, assim como suas ações pendentes, ativas e concluídas',
   tecnologias: ['React', 'Figma', 'JavaScript', 'MySQL'],
-  iconesTecnologias: IconesGap, // Passamos o componente de ícones aqui
+  iconesTecnologias: IconesGap,
   objetivos: [
     'Visualização de ações por projeto',
     'Gerenciamento de projetos',
@@ -198,58 +199,18 @@ const dadosGap = {
 const Projetos = () => {
   const [modalAberto, setModalAberto] = useState(false);
   const [projetoSelecionado, setProjetoSelecionado] = useState(null);
-  // useEffect(() => {
-  //   if (modalAberto) {
-  //     document.body.style.overflow = 'hidden';
-  //   } else {
-  //     document.body.style.overflow = 'auto';
-  //   }
-  //   return () => {
-  //     document.body.style.overflow = 'auto';
-  //   };
-  // }, [modalAberto]);
-
-  // const [arrastandoPos, setArrastandoPos] = useState(0);
-  // const touchStartPos = useRef(0);
-
-  // const iniciarArrasto = (e) => {
-  //   touchStartPos.current = e.clientY || e.touches[0].clientY;
-  // };
-
-  // const movendoArrasto = (e) => {
-  //   if (touchStartPos.current === 0) return;
-
-  //   const currentPos = e.clientY || e.touches[0].clientY;
-  //   const diferenca = currentPos - touchStartPos.current;
-
-  //   if (diferenca > 0) {
-  //     setArrastandoPos(diferenca);
-  //   }
-  // };
-
-  // const finalizarArrasto = () => {
-  //   if (arrastandoPos > 150) {
-  //     setModalAberto(false);
-  //   }
-
-  //   setArrastandoPos(0);
-  //   touchStartPos.current = 0;
-  // };
   const abrirModal = (projeto) => {
     setProjetoSelecionado(projeto);
     setModalAberto(true);
   };
-
   const fecharModal = () => {
     setModalAberto(false);
     setProjetoSelecionado(null);
   };
-  // const alternarModal = () => {
-  //   setModalAberto(!modalAberto);
-  // };
   return (
     <main className={styles.projetosContainer}>
       <h1>Meus Projetos</h1>
+      {/* seção sonhario */}
       <section className={styles.sonhario}>
         <div className={styles.projetoImagem}>
           <div className={styles.celularMockup}>
@@ -273,11 +234,8 @@ const Projetos = () => {
           alternarModal={fecharModal}
           projeto={projetoSelecionado}
         />
-
-        {/* Renderização Condicional do Modal */}
-        {/* fim modal conteudo */}
       </section>
-      {/* fim seção sonhario */}
+      {/* seção tavern_talk */}
       <section className={styles.tavernTalk}>
         <div className={styles.projetoImagem}>
           <div className={styles.celularMockup}>
@@ -296,8 +254,8 @@ const Projetos = () => {
             Saiba mais...
           </button>
         </div>
-        {/* ModalTavernTalk */}
       </section>
+      {/* seção gap */}
       <section className={styles.gap}>
         <div className={styles.projetoImagem}>
           <div className={styles.pcMockup}>
