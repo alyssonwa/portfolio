@@ -50,6 +50,8 @@ export default function ModalProjeto({ modalAberto, alternarModal, projeto }) {
     logoBanner,
     loginBanner,
     corFundoBanner,
+    corFundoLista,
+    corFundoLink,
     descricao,
     tecnologias, // Array de strings: ['React Native', 'Figma'...]
     iconesTecnologias: Icones, // Componente contendo os SVGs/Icons
@@ -91,7 +93,7 @@ export default function ModalProjeto({ modalAberto, alternarModal, projeto }) {
         {/* Banner com Cor Customizada por Prop */}
         <div
           className={styles.bannerModal}
-          style={{ backgroundColor: corFundoBanner || '#0F172A' }}
+          style={{ background: corFundoBanner || '#0F172A' }}
         >
           <img
             src={logoBanner}
@@ -131,7 +133,10 @@ export default function ModalProjeto({ modalAberto, alternarModal, projeto }) {
           <div className={styles.cardsModal}>
             <div className={styles.cardItem}>
               <h3>Tecnologias Utilizadas</h3>
-              <ul className={styles.cardLista}>
+              <ul
+                className={styles.cardLista}
+                style={{ background: corFundoLista || 'var(--CorFundo)' }}
+              >
                 {tecnologias.map((tech, index) => (
                   <li key={index}>{tech}</li>
                 ))}
@@ -140,7 +145,10 @@ export default function ModalProjeto({ modalAberto, alternarModal, projeto }) {
 
             <div className={styles.cardItem}>
               <h3>Objetivos alcançados</h3>
-              <ul className={styles.cardLista}>
+              <ul
+                className={styles.cardLista}
+                style={{ background: corFundoLista || 'var(--CorFundo)' }}
+              >
                 {objetivos.map((obj, index) => (
                   <li key={index}>{obj}</li>
                 ))}
@@ -162,7 +170,15 @@ export default function ModalProjeto({ modalAberto, alternarModal, projeto }) {
             <ul>
               {links.map((link, index) => (
                 <li key={index}>
-                  <a href={link.url} target="_blank" rel="noreferrer">
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      '--cor-link-customizada':
+                        corFundoLink || 'var(--CorFundo)',
+                    }}
+                  >
                     {link.nome}
                     {link.icone}
                   </a>

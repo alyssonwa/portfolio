@@ -96,8 +96,13 @@
 .alçaModal {
     width: 50px;
     height: 7px;
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.3);
+
+    position: sticky;
+    top: -20px;
+    z-index: 10;
+
+    /* position: relative; */
+    background-color: rgb(123, 120, 120, 0.5);
     border-radius: 10px;
     margin: -20px auto 20px auto; 
     /* Prepara a suavidade da animação */
@@ -176,7 +181,6 @@
     border-radius: 10px;
     padding-left: 25px;
     padding-right: 5px;
-    background: linear-gradient(180deg, rgba(33,40,74,0.59) 0%, rgba(55,71,150,0.59) 100%);
 }
 
 
@@ -198,12 +202,12 @@
     text-decoration: none;
     padding: 15px;
     font-size: 1.2em;
-    background: linear-gradient(180deg, rgba(33,40,74,0.59) 0%, rgba(55,71,150,0.59) 100%);
     color: var(--CorLetra);
     border-radius: 25px;
     display:flex;
     gap:10px;
     align-items: center;
+    background: var(--cor-link-customizada);
 }
 
 
@@ -232,7 +236,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.2); /* Escurece o fundo */
+    background-color: rgba(0, 0, 0, 0.3); /* Escurece o fundo */
     
     display: flex;
     align-items: flex-end;
@@ -293,7 +297,8 @@
     right: 0;
     bottom: 0;
     
-    background: linear-gradient(180deg, rgba(33,40,74,0.59) 0%, rgba(55,71,150,0.59) 100%);
+    background: var(--cor-link-customizada);
+    background: corFundoLink;
     border-radius: 25px;
     
     /* ESTADO INICIAL: Invisível */
