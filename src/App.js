@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import Header from './components/header';
 import Resumo from './components/resumo';
 import Projetos from './components/projetos';
+import SobreMim from './components/sobre';
 
 function App() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -26,6 +27,7 @@ function App() {
       <Header />
       <Resumo />
       <Projetos />
+      <SobreMim />
     </div>
   );
 }

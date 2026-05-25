@@ -209,7 +209,7 @@ const Projetos = () => {
   };
   return (
     <main className={styles.projetosContainer}>
-      <h1>Meus Projetos</h1>
+      <h1>Projetos em Destaque</h1>
       {/* seção sonhario */}
       <section className={styles.sonhario}>
         <div className={styles.projetoImagem}>

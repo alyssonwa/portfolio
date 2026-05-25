@@ -9,11 +9,12 @@
     gap: 20px;
 }
 .projetosContainer h1 {
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 20px;
     font-weight: 500;
     font-family: var(--fonte1);
-    border-bottom: 1px solid var(--CorDestaque);
+    font-style: italic;
+    border-bottom: 0.5px solid var(--CorDestaque);
 }
 .projetosContainer section {
     display: flex;
@@ -96,13 +97,14 @@
     padding-top: 10px;
     font-size: 2.4em;
     font-weight: 600;
+    font-style: normal;
     border: none;
 }
  .projetoDescricao p {
     font-family: var(--fonte0);
     font-size: 1.2em;
     font-weight: 500;
-    text-align: justify;
+    text-align: center;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -194,7 +196,9 @@
 
 .projetosContainer {
     gap: 0px;
-    
+}
+.projetosContainer h1 {
+    margin-bottom: 40px;
 }
 .projetosContainer section {
     width: 100%;
