@@ -2,6 +2,7 @@
 /*configs globais*/
 .projetosContainer {
     border-top: 1px solid var(--CorDestaque);
+    padding-bottom: 60px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
