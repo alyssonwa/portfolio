@@ -27,10 +27,18 @@ function App() {
       <div className={styles.spotlight}></div>
 
       <Header />
-      <Resumo />
-      <Projetos />
-      <SobreMim />
-      <Contato />
+      <div id="inicio">
+        <Resumo />
+      </div>
+      <div id="projetos">
+        <Projetos />
+      </div>
+      <div id="sobre-mim">
+        <SobreMim />
+      </div>
+      <div id="contato">
+        <Contato />
+      </div>
       <Footer />
     </div>
   );

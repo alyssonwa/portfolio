@@ -62,19 +62,32 @@ const Header = () => {
         </button>
         <ul>
           <li>
-            <a href="#">Início</a>
+            <a href="#inicio" onClick={() => setMenuAberto(false)}>
+              Início
+            </a>
           </li>
           <li>
-            <a href="#">Projetos</a>
+            <a href="#projetos" onClick={() => setMenuAberto(false)}>
+              Projetos
+            </a>
           </li>
           <li>
-            <a href="#">Sobre Mim</a>
+            <a href="#sobre-mim" onClick={() => setMenuAberto(false)}>
+              Sobre Mim
+            </a>
           </li>
           <li>
-            <a href="#">Contato</a>
+            <a href="#contato" onClick={() => setMenuAberto(false)}>
+              Contato
+            </a>
           </li>
           <li>
-            <a href="#">
+            <a
+              href="/curriculo.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuAberto(false)}
+            >
               Currículo
               <ArrowOutwardIcon
                 fontSize="small"

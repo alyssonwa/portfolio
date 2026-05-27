@@ -13,13 +13,27 @@ const Resumo = () => {
         <h1>Desenvolvedor Front-end</h1>
         <ul className={styles.linksSociais}>
           <li>
-            <a href="#">LinkedIn</a>
+            <a
+              href="https://www.linkedin.com/in/alysson-wanderley-alves-7a331b1b2/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
           </li>
           <li>
-            <a href="#">GitHub</a>
+            <a
+              href="https://github.com/alyssonwa"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
           </li>
           <li>
-            <a href="#">Currículo</a>
+            <a href="/curriculo.pdf" target="_blank" rel="noopener noreferrer">
+              Currículo
+            </a>
           </li>
         </ul>
         <article>
@@ -46,7 +60,7 @@ const Resumo = () => {
             diversos projetos, os quais foram essenciais para meu aprendizado e
             evolução como desenvolvedor web.
           </p>
-          <a href="#" className={styles.linkProjetos}>
+          <a href="#projetos" className={styles.linkProjetos}>
             Confira abaixo meus principais projetos{' '}
             <ArrowDropDownIcon
               fontSize="large"
