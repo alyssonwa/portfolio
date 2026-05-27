@@ -188,7 +188,7 @@ const dadosGap = {
     'Interface moderna',
   ],
   contribuicaoContexto: [
-    'Neste sistema, minha participação foi principalmente como desenvolvedor front-end, visto que o figma já estava pronto e o projeto em andamento quando entrei para a aquipe. Junto à equipe do front, fui capaz de auxilar na criação do código das telas do figma, além de realizar algumas manutenções para que telas antigas se adaptassem à funções novas que o time estava implementando na época.',
+    'Neste sistema, minha participação foi principalmente como desenvolvedor front-end, visto que o figma já estava pronto e o projeto em andamento quando entrei para a equipe. Junto à equipe do front, fui capaz de auxilar na criação do código das telas do figma, além de realizar algumas manutenções para que telas antigas se adaptassem à funções novas que o time estava implementando na época.',
     'Nesse contexto, apesar de ter entrado com pouca experiência, visto que foi um dos primeiros projetos dos quais participei ativamente no estágio, foi uma ótima oportunidade para aprender a trabalhar com diversas ferramentas. Em especial React e JavaScript, mas também o Github para versionamento de código, o qual se mostrou essencial para manter tudo organizado mesmo com uma equipe grande trabalhando no mesmo sistema de forma simultânea.',
   ],
   links: [
@@ -228,7 +228,7 @@ const Projetos = () => {
         </div>
         <div className={styles.projetoDescricao}>
           <h1>Sonhario</h1>
-          <p>Aplicativo diário de hábitos de sono</p>
+          <p>Aplicativo de diário de hábitos de sono</p>
           <button onClick={() => abrirModal(dadosSonhario)}>
             Saiba mais...
           </button>
