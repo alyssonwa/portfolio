@@ -30,6 +30,7 @@ import LogoVercel from '../icons/vercel';
 import LogoNext from '../icons/next';
 import LogoMySQL from '../icons/mySQL';
 import LogoJavaScript from '../icons/javascript';
+import LogoVite from '../icons/vite';
 
 //COMPONENTE AUXILIAR PARA OS ÍCONES DO BANNER
 const IconesSonhario = () => (
@@ -162,6 +163,9 @@ const IconesGap = () => (
     <abbr title="React">
       <LogoReact />
     </abbr>
+    <abbr title="Vite">
+      <LogoVite />
+    </abbr>
   </>
 );
 
@@ -175,7 +179,7 @@ const dadosGap = {
   corFundoLink: 'linear-gradient(#005CA9,#2794CD)',
   descricao:
     'Sistema desenvolvido em React para o gerenciamento de atribuições e projetos. Utilizado principalmente para uso interno do setor de TI da SEDUC/AL, de forma a facilitar a visualização e gerenciamento dos projetos em andamento no setor. O sistema possui funcões úteis nesse sentido, como a visualização do andamento dos projetos, assim como suas ações pendentes, ativas e concluídas',
-  tecnologias: ['React', 'Figma', 'JavaScript', 'MySQL'],
+  tecnologias: ['React', 'Figma', 'JavaScript', 'MySQL', 'Vite'],
   iconesTecnologias: IconesGap,
   objetivos: [
     'Visualização de ações por projeto',

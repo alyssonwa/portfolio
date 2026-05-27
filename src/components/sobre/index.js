@@ -39,11 +39,11 @@ const SobreMim = () => {
               </tr>
               <tr>
                 <th colspan="2">Linguagens</th>
-                <td colspan="2">Python | JavaScript</td>
+                <td colspan="2">Python | JavaScript | PHP</td>
               </tr>
               <tr>
                 <th colspan="2">Front-end</th>
-                <td>HTML | CSS | JavaScript | React</td>
+                <td>HTML | CSS | Expo| React</td>
               </tr>
               <tr>
                 <th colspan="2">Banco de dados</th>
