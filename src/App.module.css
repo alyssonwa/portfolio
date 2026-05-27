@@ -9,7 +9,7 @@ Grandes telas: acima de 1200px.
   position: relative;
   min-height: 100vh; /*garante aplicação do efeito em toda a tela*/
   width: 100%;
-  overflow: hidden; /*evita scroll lateral dentro do container*/
+  /* overflow: hidden; */
 }
 
 .spotlight {
@@ -20,7 +20,7 @@ Grandes telas: acima de 1200px.
   /* O gradiente usa as variáveis do JS */
   background: radial-gradient(
     500px circle at 75% 0%, /* 50% na horizontal, 0% no topo */
-    rgba(29, 78, 216, 0.2), /* Um pouco mais intenso já que é fixo */
+    rgba(29, 78, 216, 0.25), /* Um pouco mais intenso já que é fixo */
     transparent 55%
   );
 }
@@ -35,7 +35,7 @@ Grandes telas: acima de 1200px.
     /* transition: background 0.15s ease-out; */
     background: radial-gradient(
       600px circle at var(--mouse-x) var(--mouse-y),
-      rgba(29, 78, 216, 0.15),
+      rgba(29, 78, 216, 0.1),
       transparent 80%
     );
   }

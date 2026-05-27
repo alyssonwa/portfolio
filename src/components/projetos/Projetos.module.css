@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*configs globais*/
 .projetosContainer {
-    border-top: 1px solid var(--CorDestaque);
+    border-top: 1px solid color-mix(in oklab,var(--CorDestaque)75%,transparent);
     padding-bottom: 60px;
     display: flex;
     flex-flow: column nowrap;

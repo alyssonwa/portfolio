@@ -4,6 +4,8 @@ import Header from './components/header';
 import Resumo from './components/resumo';
 import Projetos from './components/projetos';
 import SobreMim from './components/sobre';
+import Contato from './components/contato';
+import Footer from './components/footer';
 
 function App() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -28,6 +30,8 @@ function App() {
       <Resumo />
       <Projetos />
       <SobreMim />
+      <Contato />
+      <Footer />
     </div>
   );
 }

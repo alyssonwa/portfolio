@@ -2,7 +2,7 @@
 
 .sobreContainer {
     padding: 40px 20px;
-    border-top: 1px solid var(--CorDestaque);
+    border-top: 1px solid color-mix(in oklab,var(--CorDestaque)75%,transparent);
 }
 
 .sobreConteudo {
@@ -49,6 +49,7 @@
     min-height: 250px;
     font-size: 1.25em;
     color: var(--CorFundo2);
+    margin-bottom: 20px;
 }
 
 .sobreConteudo th, td {
@@ -82,7 +83,6 @@
     .tabelaHabilidades {
         flex: 1;
         overflow-x: visible;
-        position: sticky;
         top: 40px;
     }
 

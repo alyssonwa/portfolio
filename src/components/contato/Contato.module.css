@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+.contatoContainer {
+    padding: 40px 20px;
+    /* border-top: 0.5px solid var(--CorDestaque); */
+    border-top: 1px solid color-mix(in oklab,var(--CorDestaque)75%,transparent);
+}
+.contatoConteudo {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+.contatoConteudo h1 {
+    border-bottom: 1.5px solid var(--CorDestaque);
+    width: fit-content; 
+    padding-right: 10px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-family: var(--fonte1);
+    font-style: italic;
+}
+.contatoConteudo p {
+    font-family: var(--fonte0);
+    font-size: 1.1em;
+    line-height: 1.9;
+    word-break: break-word;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    padding-left: 5px;
+    color: var(--CorLetra);
+    text-align: justify; 
+
+    display: flex;
+    flex-flow: row wrap;
+}
+.contatoConteudo ul {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    width: 70%;
+}
+.contatoConteudo li a {
+    text-decoration: underline;
+    display: flex;
+    flex-flow: row wrap;
+    width: fit-content;
+    align-items: center;  
+    color: var(--CorFundo2);
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+    font-size: 1.2em;
+
+    gap:10px;
+
+    background: linear-gradient(180deg, rgba(33,40,74,0.59) 0%, rgba(55,71,150,0.59) 100%);
+}
+
+
+
+/*configs desktop*/
+@media screen and (min-width: 768px) {
+
+    .contatoConteudo {
+    max-width: 880px;
+}
+.contatoConteudo ul {
+    gap:40px;
+}
+.contatoConteudo li a {
+    position: relative;
+    background: transparent;
+    z-index: 1;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+.contatoConteudo li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background: linear-gradient(180deg, rgba(33,40,74,0.59) 0%, rgba(55,71,150,0.59) 100%);
+    border-radius: 25px;
+    
+    /* ESTADO INICIAL: Invisível */
+    opacity: 0;
+    z-index: -1;
+    
+    /* animação da opacidade */
+    transition: opacity 0.5s ease;
+}
+.contatoConteudo li a:hover::before {
+    opacity: 1;
+}
+}

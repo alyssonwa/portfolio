@@ -10,10 +10,8 @@ const Header = () => {
 
   useEffect(() => {
     if (menuAberto) {
-      // Quando o modal abre, trava o scroll do corpo da página
       document.body.style.overflow = 'hidden';
     } else {
-      // Quando o modal fecha, devolve o scroll
       document.body.style.overflow = 'auto';
     }
 
@@ -36,63 +34,61 @@ const Header = () => {
   };
 
   return (
-    <>
-      <header className={styles.header}>
+    <header className={styles.header}>
+      <button
+        className={styles.botaoMenu}
+        onClick={alternarMenu}
+        aria-label="Abrir menu"
+      >
+        <MenuIcon />
+      </button>
+      <h1
+        onClick={irParaHome}
+        className={styles.logoClicavel}
+        role="button"
+        tabIndex="0"
+      >
+        <LogoEstrela className={styles.estrelaSvg} />
+        Alysson Alves
+      </h1>
+      {/* Se menuAberto for true, adiciona a classe 'aberto' */}
+      <nav className={`${styles.navMenu} ${menuAberto ? styles.aberto : ''}`}>
         <button
-          className={styles.botaoMenu}
+          className={styles.fecharBotao}
           onClick={alternarMenu}
-          aria-label="Abrir menu"
+          aria-label="Fechar menu"
         >
-          <MenuIcon />
+          <CloseIcon />
         </button>
-        <h1
-          onClick={irParaHome}
-          className={styles.logoClicavel}
-          role="button"
-          tabIndex="0"
-        >
-          <LogoEstrela className={styles.estrelaSvg} />
-          Alysson Alves
-        </h1>
-        {/* Se menuAberto for true, adiciona a classe 'aberto' */}
-        <nav className={`${styles.navMenu} ${menuAberto ? styles.aberto : ''}`}>
-          <button
-            className={styles.fecharBotao}
-            onClick={alternarMenu}
-            aria-label="Fechar menu"
-          >
-            <CloseIcon />
-          </button>
-          <ul>
-            <li>
-              <a href="#">Início</a>
-            </li>
-            <li>
-              <a href="#">Projetos</a>
-            </li>
-            <li>
-              <a href="#">Sobre Mim</a>
-            </li>
-            <li>
-              <a href="#">Contato</a>
-            </li>
-            <li>
-              <a href="#">
-                Currículo
-                <ArrowOutwardIcon
-                  fontSize="small"
-                  className={styles.setaArquivo}
-                />
-              </a>
-            </li>
-          </ul>
-        </nav>
-        {/* Overlay: Fundo escurecido que aparece atrás do menu */}
-        {menuAberto && (
-          <div className={styles.overlay} onClick={alternarMenu}></div>
-        )}
-      </header>
-    </>
+        <ul>
+          <li>
+            <a href="#">Início</a>
+          </li>
+          <li>
+            <a href="#">Projetos</a>
+          </li>
+          <li>
+            <a href="#">Sobre Mim</a>
+          </li>
+          <li>
+            <a href="#">Contato</a>
+          </li>
+          <li>
+            <a href="#">
+              Currículo
+              <ArrowOutwardIcon
+                fontSize="small"
+                className={styles.setaArquivo}
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+      {/* Overlay: Fundo escurecido que aparece atrás do menu */}
+      {menuAberto && (
+        <div className={styles.overlay} onClick={alternarMenu}></div>
+      )}
+    </header>
   );
 };
 export default Header;
