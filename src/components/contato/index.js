@@ -20,18 +20,8 @@ const Contato = () => {
               target="_blank"
               rel="noreferrer"
             >
-              alyssonwa02@gmail.com
               <EmailIcon fontSize="medium" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/alysson-wanderley-alves-7a331b1b2/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Linkedin
-              <LogoLinkedin size="30" />
+              alyssonwa02@gmail.com
             </a>
           </li>
           <li>
@@ -42,6 +32,16 @@ const Contato = () => {
             >
               Github
               <LogoGithub size="28" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/alysson-wanderley-alves-7a331b1b2/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Linkedin
+              <LogoLinkedin size="30" />
             </a>
           </li>
         </ul>
