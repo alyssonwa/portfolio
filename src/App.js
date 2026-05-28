@@ -15,6 +15,7 @@ function App() {
       setMousePos({ x: e.clientX, y: e.clientY });
     }
   };
+
   return (
     <div
       onMouseMove={handleMouseMove}

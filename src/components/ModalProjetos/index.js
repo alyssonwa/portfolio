@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import styles from './ModalProjetos.module.css'; // Ajuste o caminho do seu CSS se necessário
-
 // Note que sumiram as props de arrasto, pegamos apenas o controle de abertura/fechamento
 export default function ModalProjeto({ modalAberto, alternarModal, projeto }) {
   // 1. Estados e Refs do ARRASTO moram aqui dentro agora!
@@ -9,18 +8,32 @@ export default function ModalProjeto({ modalAberto, alternarModal, projeto }) {
   const touchStartPos = useRef(0);
 
   // 2. O useEffect do Scroll também fica aqui
-  useEffect(() => {
-    if (modalAberto) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [modalAberto]);
+  // useEffect(() => {
+  //   if (modalAberto) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'auto';
+  //   }
+  //   return () => {
+  //     document.body.style.overflow = 'unset';
+  //   };
+  // }, [modalAberto]);
+  // if (!modalAberto || !projeto) return null;
 
-  // Se não estiver aberto, não renderiza nada
+  useEffect(() => {
+    // Adiciona uma trava rígida na raiz do site enquanto o modal estiver aberto
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    document.body.style.touchAction = 'none'; // Bloqueia o arrasto de dedo no fundo do celular
+
+    return () => {
+      // Devolve a liberdade total ao site de trás ao fechar
+      document.documentElement.style.overflow = 'unset';
+      document.body.style.overflow = 'unset';
+      document.body.style.touchAction = 'unset';
+    };
+  }, []);
+
   if (!modalAberto || !projeto) return null;
 
   // 3. Suas funções de lógica internas
@@ -59,7 +72,14 @@ export default function ModalProjeto({ modalAberto, alternarModal, projeto }) {
     contribuicaoContexto, // Array com os parágrafos de texto
     links, // Array de objetos: [{ nome: 'Github', url: '...', icone: <LogoGithub /> }]
   } = projeto;
-
+  if (
+    !modalAberto ||
+    !projeto ||
+    typeof document === 'undefined' ||
+    !document.body
+  ) {
+    return null;
+  }
   return (
     <div
       className={styles.modalOverlay}

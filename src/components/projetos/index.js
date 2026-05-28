@@ -58,7 +58,8 @@ const dadosSonhario = {
   titulo: 'Sonhario',
   logoBanner: LogoSonhario,
   loginBanner: LoginSonhario,
-  corFundoBanner: '#131A35',
+  corFundoBanner:
+    'linear-gradient(180deg, rgba(33,40,74,0.59) 0%, rgba(55,71,150,0.59) 100%)',
   corFundoLista:
     'linear-gradient(180deg, rgba(33,40,74,0.59) 0%, rgba(55,71,150,0.59) 100%)',
   corFundoLink:
@@ -84,9 +85,9 @@ const dadosSonhario = {
       icone: <LogoGithub />,
     },
     {
-      nome: 'Página de documentação e download',
+      nome: 'Documentação e download',
       url: 'https://bunny-sammy.github.io/sonhario-api/',
-      icone: <DescriptionIcon fontSize="small" />,
+      icone: <DescriptionIcon fontSize="medium" />,
     },
   ],
 };
@@ -143,7 +144,7 @@ const dadosTavernTalk = {
     {
       nome: 'Site publicado',
       url: 'https://tavern-talk.vercel.app/',
-      icone: <ArrowOutwardIcon fontSize="small" />,
+      icone: <ArrowOutwardIcon fontSize="medium" />,
     },
   ],
 };
@@ -195,7 +196,7 @@ const dadosGap = {
     {
       nome: 'Site publicado',
       url: 'https://gap.educacao.al.gov.br/login',
-      icone: <ArrowOutwardIcon fontSize="small" />,
+      icone: <ArrowOutwardIcon fontSize="medium" />,
     },
   ],
 };
@@ -233,11 +234,6 @@ const Projetos = () => {
             Saiba mais...
           </button>
         </div>
-        <ModalProjetos
-          modalAberto={modalAberto}
-          alternarModal={fecharModal}
-          projeto={projetoSelecionado}
-        />
       </section>
       {/* seção tavern_talk */}
       <section className={styles.tavernTalk}>
@@ -277,6 +273,13 @@ const Projetos = () => {
           <button onClick={() => abrirModal(dadosGap)}>Saiba mais...</button>
         </div>
       </section>
+      {modalAberto && projetoSelecionado && (
+        <ModalProjetos
+          modalAberto={modalAberto}
+          alternarModal={fecharModal}
+          projeto={projetoSelecionado}
+        />
+      )}
     </main>
   );
 };

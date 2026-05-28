@@ -14,15 +14,13 @@
     background-color: var(--CorFundo);
     padding: 30px 30px 60px 30px;
     color: var(--CorLetra);
-    padding: 40px;
     border-radius: 15px 15px 0px 0px;
     width: 100%;
     max-width: 100vw;
-    max-height: 80vh;
+    max-height: 85vh;
     position: relative;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
     animation: aparecerModal 0.5s ease-out;
-    max-height: 85vh; 
     overflow-y: auto; 
     scrollbar-width: thin;
     scrollbar-color: var(--CorFundo2) transparent;
@@ -48,7 +46,7 @@
     margin-bottom: 25px;
 }
 .modalConteudo p {
-    max-width: 600px;
+    width: 100%;
     font-family: var(--fonte0);
     font-size: 1.13em;
     font-weight: normal;
@@ -60,7 +58,6 @@
 }
 .bannerModal {
     position: relative;
-    margin-top: 5px;
     width: 100%;
     height: 250px;
     background: linear-gradient(180deg, rgba(33,40,74,0.59) 0%, rgba(55,71,150,0.59) 100%);
@@ -69,15 +66,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 
-    margin-bottom: 20px;
+    padding: 15px;
+
+    margin-bottom: 40px;
     border-radius: 25px;
 }
 .logoBanner {
     width: auto;
     max-width: 60%;
-    max-height: 90%;
+    max-height: 80%;
 
     object-fit: contain;
     filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
@@ -167,30 +166,37 @@
 }
 .cardsModal {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
     width: 100%;
+    padding: 0 10px;
 }
 .cardItem {
     display: flex;
     flex-flow: column wrap; 
     justify-content: flex-start;
     align-items: center;
-    width: 50%;          
-    margin-bottom: 40px;
+    width: 100%;          
+    max-width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 10px;
 }
 .cardLista {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     width: 95%;
-    min-height: 150px;
+    max-width: 100%;
+    height: 100%;
     border: 1px solid color-mix(in oklab,var(--CorLetra)35%,transparent);
     border-radius: 10px;
-    padding-left: 25px;
-    padding-right: 5px;
+    /* padding-left: 25px;
+    padding-right: 5px; */
+    /* margin: 0 auto; */
+    padding: 10px 5px 10px 25px;
 }
 
 
@@ -201,23 +207,31 @@
     padding-left: 10px;
     /* border: 1px solid white; */
 }
+
 .linksProjeto ul {
     list-style: none;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
+    width: 100%;
     gap: 15px;
 }
 .linksProjeto li a {
     text-decoration: none;
     padding: 15px;
-    font-size: 1.4em;
+    font-size: 1.2em;
     color: var(--CorLetra);
     border-radius: 25px;
     display:flex;
     gap:10px;
     align-items: center;
+    justify-content: flex-start;
     background: var(--cor-link-customizada);
+
+    width: auto;
+    max-width: 100%; /* Impede o botão de ser maior que a tela */
+    white-space: normal; /* Altera o padrão e PERMITE que o texto quebre em duas linhas se necessário */
+    word-wrap: break-word;
 }
 
 
@@ -281,6 +295,7 @@
 }
 .modalConteudo {
     position: static;
+    padding: 40px;
 }
 
 .modalConteudo h2 {
@@ -292,15 +307,23 @@
  max-width: 800px;
 
 }
+.cardsModal {
+    flex-direction: row;
+}
+.cardLista li {
+    font-size: 1.2em;
+}
 
 .linksProjeto ul {
     justify-content: center;
     gap: 16px;
+    flex-wrap: wrap;
 }
 .linksProjeto li a {
     position: relative;
     background: transparent;
     z-index: 1;
+    font-size: 1.4em;
 }
 .linksProjeto li a::before {
     content: "";
