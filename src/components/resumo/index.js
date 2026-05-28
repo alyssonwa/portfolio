@@ -31,7 +31,11 @@ const Resumo = () => {
             </a>
           </li>
           <li>
-            <a href="/curriculo.pdf" target="_blank" rel="noopener noreferrer">
+            <a
+              href={`${process.env.PUBLIC_URL}/curriculo.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Currículo
             </a>
           </li>

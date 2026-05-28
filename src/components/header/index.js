@@ -83,7 +83,7 @@ const Header = () => {
           </li>
           <li>
             <a
-              href="/curriculo.pdf"
+              href={`${process.env.PUBLIC_URL}/curriculo.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuAberto(false)}
