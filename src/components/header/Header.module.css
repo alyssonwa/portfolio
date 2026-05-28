@@ -106,12 +106,12 @@
   border: none;
   color: var(--CorLetra);
   cursor: pointer;
+  transition: background-color 0.5s, color 0.5s;
+  border-radius: 15px;
 }
 .fecharBotao:hover {
     background-color: var(--CorFundo2);
     color: var(--CorFundo);
-    border-radius: 15px;
-    transition: background-color 0.5s, color 0.5s;
 }
 .botaoMenu {
   background: none;

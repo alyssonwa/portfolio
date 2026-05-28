@@ -77,18 +77,19 @@ export default function ModalProjeto({ modalAberto, alternarModal, projeto }) {
           transition: arrastandoPos === 0 ? 'transform 0.5s ease-out' : 'none',
         }}
       >
-        {/* Alça do Modal */}
-        <div
-          className={styles.alçaModal}
-          onMouseDown={iniciarArrasto}
-          onTouchStart={iniciarArrasto}
-          title="Fechar"
-        ></div>
-
-        {/* Botão de Fechar */}
-        <button className={styles.fecharModal} onClick={alternarModal}>
-          <CloseIcon fontSize="small" />
-        </button>
+        <div className={styles.topoFixoModal}>
+          {/* Alça do Modal */}
+          <div
+            className={styles.alçaModal}
+            onMouseDown={iniciarArrasto}
+            onTouchStart={iniciarArrasto}
+            title="Fechar"
+          ></div>
+          {/* Botão de Fechar */}
+          <button className={styles.fecharModal} onClick={alternarModal}>
+            <CloseIcon fontSize="medium" />
+          </button>
+        </div>
 
         {/* Banner com Cor Customizada por Prop */}
         <div
